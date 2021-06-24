@@ -1,5 +1,10 @@
+from django.shortcuts import render
 import requests
 from django.http import HttpResponse
+
+
+# Create your views here.
+
 
 def index(request):
     url = "https://amazon-products1.p.rapidapi.com/product"
@@ -27,3 +32,4 @@ def ebayindex(request):
         
     response = requests.request("GET", url, headers=headers, params=querystring)
     return HttpResponse(response)
+
