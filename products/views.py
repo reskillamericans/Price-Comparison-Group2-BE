@@ -1,9 +1,13 @@
 import requests
-from django.http import HttpResponse
+from django.shortcuts import render
+from django.http import JsonResponse
 
-def index(request):
+def home(requests):
+    return render(requests, "products/index.html")
+
+def amazon(request):
     url = "https://amazon-products1.p.rapidapi.com/product"
-    var_asin="B08BF4CZSV"
+    var_asin="B08XNY5WGV"
     querystring = {"country":"US","asin":var_asin}
     headers = {
         'x-rapidapi-key': "47b5c7199amshf6676988b53e987p14d46cjsn795c426ae547",
@@ -11,11 +15,11 @@ def index(request):
         }
     
     response = requests.request("GET", url, headers=headers, params=querystring)
-    return HttpResponse(response)
+    return JsonResponse(response.json(), safe=False)
 
 
 
-def ebayindex(request):
+def ebay(request):
     url="https://api.sandbox.ebay.com/buy/browse/v1/item_summary/search?" 
     
     querystring={"q" : "drone","limit":3}
@@ -26,4 +30,6 @@ def ebayindex(request):
         }
         
     response = requests.request("GET", url, headers=headers, params=querystring)
-    return HttpResponse(response)
+    return JsonResponse(response.json(), safe=False)
+
+
