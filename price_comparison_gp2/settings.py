@@ -64,12 +64,10 @@ ROOT_URLCONF = 'price_comparison_gp2.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-#<<<<<<< backenddev1
-#        'DIRS': [BASE_DIR / "templates"],
- #       'DIRS': [BASE_DIR /'templates'],
-#=======
+
+#       'DIRS': [BASE_DIR / "templates"],
        'DIRS': ['./templates'],
-#>>>>>>> dev
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
