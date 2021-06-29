@@ -67,7 +67,7 @@ TEMPLATES = [
 #<<<<<<< backenddev1
 #        'DIRS': [BASE_DIR / "templates"],
 #=======
-#        'DIRS': ['./templates'],
+        'DIRS': ['./templates'],
 #>>>>>>> dev
         'APP_DIRS': True,
         'OPTIONS': {
