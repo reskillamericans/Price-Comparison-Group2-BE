@@ -66,7 +66,6 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
 #<<<<<<< backenddev1
 #        'DIRS': [BASE_DIR / "templates"],
-        'DIRS': [BASE_DIR + '/templates/',],
 #=======
 #        'DIRS': ['./templates'],
 #>>>>>>> dev
