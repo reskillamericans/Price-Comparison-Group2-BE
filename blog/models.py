@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Comment(models.Model):
+    commment = models.ForeignKey('products.Product', on_delete=models.CASCADE, related_name='comments')
     author = models.CharField(max_length=200)
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
