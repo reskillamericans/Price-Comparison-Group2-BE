@@ -8,14 +8,32 @@ User = get_user_model()
 
 # create registration
 class RegisterForm(forms.Form):
-    username = forms.CharField()
-    email = forms.EmailField()
+    username = forms.CharField(
+         widget=forms.TextInput(
+            attrs={
+                "class": "form-control",
+                "id": "username",
+                "placeholder": "Enter your username"
+            }
+        )
+    )
+    email = forms.EmailField(
+         widget=forms.EmailInput(
+            attrs={
+                "class": "form-control",
+                "id": "user-email",
+                "placeholder": "Enter your email"
+            }
+        )
+
+    )
     password1 = forms.CharField(
         label='Password',
         widget=forms.PasswordInput(
             attrs={
                 "class": "form-control",
-                "id": "user-password"
+                "id": "user-password",
+                "placeholder": "Enter password"
             }
         )
     )
@@ -24,7 +42,8 @@ class RegisterForm(forms.Form):
         widget=forms.PasswordInput(
             attrs={
                 "class": "form-control",
-                "id": "user-confirm-password"
+                "id": "user-confirm-password",
+                "placeholder": "Confirm password"
             }
         )
     )
@@ -36,6 +55,7 @@ class RegisterForm(forms.Form):
         #     raise forms.ValidationError("This is an invalid username, please pick another.")
         if qs.exists():
             raise forms.ValidationError("This is an invalid username, please pick another.")
+
         return username
     
     def clean_email(self):
@@ -50,13 +70,15 @@ class RegisterForm(forms.Form):
 class LoginForm(forms.Form):
     username = forms.CharField(widget=forms.TextInput(
         attrs={
-        "class": "form-control"
+        "class": "form-control",
+        "placeholder": "Enter your username"
     }))
     password = forms.CharField(
         widget=forms.PasswordInput(
             attrs={
                 "class": "form-control",
-                "id": "user-password"
+                "id": "user-password",
+                "placeholder": "Enter password"
             }
         )
     )

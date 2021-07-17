@@ -1,16 +1,117 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet"> 
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/signup-images/Logo.png">
+    <link rel="stylesheet" href="{% static 'register.css' %}">
+</head>
+<body>
 
-{% block title %}
-Sign Up
-{% endblock %}
-{% load crispy_forms_tags %}
+    <div class="web-view">
+    <header>
+        <div class="logo">
+            <img src="images/signup-images/brand&logo.png" alt="scalables-logo">
+        </div>
+        
+        <div class="navbar">
+            <ul>
+                <li><a href="index.html" class="home">Home</a></li>
+                <li><a href="#" class="about">About Us</a></li>
+                <li><a href="faq.html" class="faq">FAQ</a></li>
+                <li><a href="#" class="blog">Blog</a></li>
+                <li><a href="Contact.html" class="contact">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="register-login">
+            <ul>
+                <li><a href="{% url 'register' %}" class="register">Register</a></li>
+                <li><a href="{% url 'login' %}" class="login">Login</a></li>
+            </ul>
+        </div>
+    </header>
 
-{% block content %}
-    <form method="POST" class="form-group">
-	{% csrf_token %}
-	{{ form|crispy }}
-	<button type="submit" class="btn btn-success">Submit</button>
-    </form>
-{% endblock %}
+<div class="main">
+    <div class="bigimage">
+        <img src="images/signup-images/person.png" alt="person-sitting-shopping-on-mobile">
+    </div>
+
+    <div class="form-container">
+      <h1>Hello!</h1>
+      <h2>Create a free account. Have an account? <a href="{% url 'login' %}">Log In</a></h2>
+        <form method="POST" class="form-group">
+			{% csrf_token %}
+            <label for="name">Username</label>
+            <!-- <input type="text" id="name" name="name" required> -->
+			{{form.username}}
+            <label for="email">Email</label>
+            <!-- <input type="text" id="email" name="email" required> -->
+			{{form.email}}
+            <label for="password">Password</label>
+            <!-- <input type="password" id="password" name="password" required> -->
+			{{form.password1}}
+            <label for="password">Confirm Password</label>
+            <!-- <input type="password" id="confirm_password" name="confirm_password" required> -->
+			{{form.password2}}
+            <div class="agreement"><input type="checkbox" name="checkbox" value="check" id="agree"/> I agree to Scalables <span>Terms of Service</span> and <span>Privacy Policy</span></div>
+            <input type="submit" name="submit" value="Register" />
+        </form>
+    </div>
+</div>
+</div>
+
+<div class="mobile-view">
+<div class="makeup">
+    <img src="images/signup-images/makeup.png" alt="scattered makeup items">
+</div>
+
+<div class="container">
+
+
+<div class="box">
+
+
+
+<h1>Hello!
+</h1>
+<h2>Register</h2>
+
+<div class="form">
+    <!-- <input type="text" name="fname" id="fname" placeholder="Full Name"> -->
+	{{form.username}}
+</div>
+
+<div class="form">
+    <!-- <input type="text" name="email" id="email" placeholder="Email"> -->
+	
+	{{ form.email }}
+	
+
+</div>
+ <div class="form">
+    <!-- <input type="password" name="pass" id="pass" placeholder="Password"> -->
+	{{form.password1}}
+ </div>
+ <div class="form">
+    <!-- <input type="password" name="pass" id="pass" placeholder="Password"> -->
+	{{form.password2}}
+ </div>
+
+ <div class="TOS"><input type="checkbox" name="checkbox" value="check" id="agree"/> I agree to Scalables <span>Terms of Service</span> and <span>Privacy Policy</span></div>
+ 
+ <div class="button register">
+     <button>Register</button>
+</div>
+<div class="bottom">
+<a href="{% url 'login' %}" class="account">Already have an account?</a>
+<a href="{% url 'login' %}" class="register">Log in</a>
+</div>
+</div>
+</div>
+</body>
 </html>
