@@ -46,7 +46,6 @@ INSTALLED_APPS = [
 
     # Apps Created by me
     'blog',
-    'products',
 
 ]
 

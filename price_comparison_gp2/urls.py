@@ -17,18 +17,6 @@ Including another URLconf
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
-#<<<<<<< backenddev1
-from django.conf.urls.static import static
-
-from accounts.views import (
-    login_view,
-    logout_view,
-    register_view,
-    
-)
-#==========
-from products.views import home
-#>>>>>>> dev
 
 urlpatterns = [
     
@@ -36,11 +24,12 @@ urlpatterns = [
     path('logout/', logout_view),
     path('register/', register_view),
     path('admin/', admin.site.urls),
-#<<<<<<< backenddev1
-    path('', include('accounts.urls')),
-#=======
+
+    path('', include('blog.urls')),
+   
+
     path('', home, name="index"),
     path('blog/', include('blog.urls')),
     path('products/', include('products.urls'))
-#>>>>>>> dev
+
 ]
