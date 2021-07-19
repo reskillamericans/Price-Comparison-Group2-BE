@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 import django_heroku
 
@@ -39,9 +40,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    "crispy_forms",
+    'accounts.apps.AccountsConfig',
+
+
     # Apps Created by me
     'blog',
-    #'products',
+
 ]
 
 MIDDLEWARE = [
@@ -59,7 +64,10 @@ ROOT_URLCONF = 'price_comparison_gp2.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['./templates'],
+
+#       'DIRS': [BASE_DIR / "templates"],
+       'DIRS': ['./templates'],
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -129,5 +137,19 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# crispy form for styling
+CRISPY_TEMPLATE_PACK="bootstrap4"
+
 # Activate Django-Heroku.
+
 django_heroku.settings(locals())
+
+#SMTP Configuration
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'devops4zuri@gmail.com'
+EMAIL_HOST_PASSWORD = 'lowentio70'
+EMAIL_USE_SSL = False

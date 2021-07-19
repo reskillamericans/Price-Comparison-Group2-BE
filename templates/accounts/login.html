@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'register.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet"> 
+    <title>Login</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/login-images/Logo.png">
+
+</head>
+<body>
+
+<div class="web-view">
+        <header>
+            <div class="logo">
+                <img src="images/login-images/brand&logo.png" alt="scalables-logo">
+            </div>
+            
+            <div class="navbar">
+                <ul>
+                    <li><a href="index.html" class="home">Home</a></li>
+                    <li><a href="#" class="about">About Us</a></li>
+                    <li><a href="faq.html" class="faq">FAQ</a></li>
+                    <li><a href="#" class="blog">Blog</a></li>
+                    <li><a href="Contact.html" class="contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="register-login">
+                <ul>
+                    <li><a href="{% url 'login' %}" class="login">Register</a></li>
+                    <li><a href="{% url 'register' %}" class="register">Login</a></li>
+                </ul>
+            </div>
+        </header>
+    
+    <div class="main">
+        <div class="bigimage">
+            <img src="images/login-images/person.png" alt="person-sitting-shopping-on-mobile">
+        </div>
+    
+        <div class="form-container">
+          <h1>Welcome Back!</h1>
+          <h2>New here? <a href="{% url 'register' %}">Create an account</a></h2>
+            <form method="POST" class="form-group">
+                {% csrf_token %}
+                <label for="name">Username</label>
+                <!-- <input type="text" id="email-web" name="email" required> -->
+                {{form.username}}
+                <label for="password">Password</label>
+                <!-- <input type="password" id="password" name="password" required> -->
+                {{form.password}}
+                <div class="remember-me"><input type="checkbox" name="checkbox" value="check" id="remember"/> Remember me <span><a href="{% url 'reset_password' %}">Forgot your password?</a></span></div>
+                <input type="submit" name="submit" value="Log In" />
+            </form>
+        </div>
+    </div>
+</div>
+    
+    <!-- //* MOBILE VIEW CODE BELOW  -->
+    
+    
+    <div class="mobile-view">
+        <div class="makeup">
+        <img src="images/login-images/makeup.png" alt="scattered makeup items">
+        </div>
+
+        <div class="container">
+    
+
+        <div class="box">
+
+   
+
+        <h1>Welcome Back!
+        </h1>
+        <h2>Log in</h2>
+
+        <div class="form">
+        <!-- <input type="text" name="email" id="email" placeholder="Email" required> -->
+        {{form.username}}
+        <span class="spin"></span>
+        </div>
+
+        <div class="form">
+        <!-- <input type="password" name="pass" id="pass" placeholder="Password" required> -->
+        {{form.password}}
+        <span class="spin"></span>
+        </div>
+
+        <a href="{% url 'reset_password' %}" class="pass-forgot">Forgot your password?</a>
+     
+        <div class="button login">
+         <button>Log in</button>
+        </div>
+        <div class="bottom">
+        <a href="{% url 'register' %}" class="account">Don't have an account?</a>
+        <a href="{% url 'register' %}" class="register">Register</a>
+        </div>
+        </div>
+    </div>
+         
+</body>
+</html>
