@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <h1> Product details</h1> <hr/>
+    {{ product.product_name }} - ${{ product.price }}
+    <br/>
+   
+    {{ product.description }}
+    <br/><br/>
+    <div style="text-align: left;margin-top:0%;">
+    <!-- checkin if user has already liked the content or not -->
+            {% if product.id in already_liked %} 
+            <p>{{ product.product }}</p>
+                <a name="{{ product.id }}" style="font-size:20px;color: blue;" class="likin" id="co"><i class="fa fa-thumbs-up" aria-hidden="true"></i></a>
+                
+            {% else %}
+            <p> {{ product.product}} </p>
+                <a name="{{ product.id }}" style="font-size:20px;color: black;" class="likin" id="co"><i class="fa fa-thumbs-up" aria-hidden="true"></i></a>
+                
+            {% endif %}
+
+           <p>{{ product.likes.count }} likes</p> 
+    </div>
+    
+    <br/><br/><br/>
+    <a href="{% url 'homeview' %}">Back</a>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+// AJAX CALL
+$('.likin').click(function(){
+    $.ajax({
+             type: "POST",
+             url: "{% url 'like_product' %}",
+             data: {'content_id': $(this).attr('name'),'operation':'like_submit','csrfmiddlewaretoken': '{{ csrf_token }}'},
+             dataType: "json",
+             success: function(response) {
+              selector = document.getElementsByName(response.content_id);
+                    if(response.liked==true){
+                      $(selector).css("color","blue");
+                    }
+                    else if(response.liked==false){
+                      $(selector).css("color","black");
+                    }
+
+
+              }
+
+        });
+
+  })
+</script>
+    
+</body>
+</html>

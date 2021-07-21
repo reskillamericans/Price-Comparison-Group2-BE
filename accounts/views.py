@@ -15,13 +15,16 @@ User = get_user_model()
 def register_view(request):
     form = RegisterForm()
     if request.method == 'POST':
-        form = RegisterForm(request.POST)
-        if form.is_valid():
-            print(form)
-            form.save()
-            user = form.cleaned_data.get('username')
-            messages.success(request, 'Account was created for ' + user)
-            return redirect('accounts:login')
+         form = RegisterForm(request.POST)
+         if form.is_valid():
+            #  form.save()
+             user = form.cleaned_data.get('username')
+          
+             messages.success(request, 'Account was created for ' + user)
+             
+             return redirect('login')
+             #return HttpResponseRedirect('login')
+            
         
     return render(request, "accounts/register.html", {"form": form})
 
