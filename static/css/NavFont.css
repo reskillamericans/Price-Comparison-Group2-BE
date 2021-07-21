@@ -1,0 +1,281 @@
+/* Style for the Fonts and Nav bar */
+
+/* Varible Declaration */
+:root {
+  /* colors */
+  --background: #fcfcfc;
+  --pri-t: #180126;
+  --sec-t: #b8b4b4;
+  --pri-c: #089285;
+  --sec-c: #f34213;
+  --navb-c: #ebebeb;
+
+  /* typography */
+  --font: "Inter", sans-serif;
+
+  /* Web Size */
+  /* Big Title */
+  --wh1: 37px;
+
+  --wh2: 28px;
+  --wh3: 21px;
+  /* headings labels links buttons */
+  --wh6: 16px;
+  /* paragraph text subheadings */
+  --wp: 16px;
+
+  /* Mobile Size */
+  /* Big Title */
+  --mh1: 19px;
+  --mh2: 14px;
+  --mh3: 14px;
+  --mh6: 8px;
+  --mp: 8px;
+  /* SOON TO COME */
+}
+
+/*Styles*/
+body {
+  background: var(--background);
+  font-family: var(--font);
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+section {
+  width: 100%;
+}
+/* Headings */
+h1 {
+  font-size: var(--wh1);
+  font-weight: normal;
+}
+/* Smaller Headings */
+h2 {
+  font-size: var(--wh2);
+  font-weight: normal;
+}
+h3 {
+  font-size: var(--wh3);
+  font-weight: normal;
+}
+h6 {
+  font-size: var(--wh6);
+  font-weight: bold;
+}
+/* Perferred Smaller Text */
+p {
+  font-size: var(--wp);
+  font-weight: normal;
+}
+
+/* Nav Bar */
+header {
+  margin-top: 0;
+
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 10vh;
+  justify-content: space-between;
+  align-items: center;
+}
+/* White Nav Bar settings */
+.white {
+  background-color: var(--background);
+}
+/* Gray NavBar Settings */
+.gray {
+  background-color: var(--navb-c);
+}
+
+/* Spacing for the logo desktop */
+.logo {
+  padding-left: 100px;
+  padding-right: 50px;
+}
+ul {
+  list-style-type: none;
+  padding: 0 25px 0 25px;
+  top: 0;
+  overflow: hidden;
+}
+
+ul li {
+  float: left;
+  padding-left: 25px;
+  padding-right: 25px;
+  font-size: var(--wh6);
+}
+
+.wnav a {
+  color: var(--pri-t);
+}
+.wnav a:hover {
+  color: var(--sec-t);
+}
+.gnav a {
+  color: var(--sec-t);
+}
+.gnav a:hover {
+  color: var(--pri-t);
+}
+.wnav .page {
+  color: var(--pri-c);
+}
+
+a {
+  font-size: var(--wh6);
+  font-weight: bold;
+  text-decoration: none;
+}
+/* Copyright */
+.copyright .copy-content {
+  color: var(--sec-t);
+  display: flex;
+  justify-content: center;
+  column-gap: 5px;
+}
+.copyright p {
+  align-self: center;
+  justify-self: center;
+}
+
+.copyright a {
+  color: var(--sec-t);
+  font-size: var(--wh6);
+  font-weight: normal;
+  border-left: 1px solid var(--sec-t);
+  padding-left: 5px;
+  padding-right: 5px;
+  align-self: center;
+}
+
+/* Mobile Nav off in this size */
+nav {
+  display: none;
+}
+
+@media screen and (max-width: 1102px) {
+  body {
+    /* background-color: var(--pri-c); */
+  }
+  h1 {
+    font-size: var(--mh1);
+    font-weight: normal;
+  }
+  h2 {
+    font-size: var(--mh2);
+    font-weight: normal;
+  }
+  h3 {
+    font-size: var(--mh3);
+    font-weight: normal;
+  }
+  h6 {
+    font-size: var(--mh6);
+    font-weight: bold;
+  }
+  p {
+    font-size: var(--mp);
+    font-weight: normal;
+  }
+  header {
+    height: 5vh;
+    padding: 10px;
+  }
+
+  .logo,
+  .navbar,
+  .register-login {
+    display: none;
+  }
+  nav {
+    width: 100%;
+    height: 100%;
+    display: grid;
+  }
+  /* Gray Navbar */
+  .gray-nav {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+  }
+  .nav-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60% 30%;
+  }
+
+  .nav-item img {
+    align-self: center;
+    justify-self: center;
+  }
+
+  .nav-item p {
+    color: var(--sec-t);
+    align-self: start;
+    justify-self: center;
+  }
+  /* white Navbar */
+  .white-nav {
+    padding-top: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+  }
+  .white-nav h2,
+  .nav-ham {
+    color: var(--pri-c);
+  }
+  .nav-ham {
+    grid-column: 1 / 2;
+    grid-row: 1/ 2;
+  }
+  .nav-ham:hover {
+    background-color: var(--background);
+    color: var(--pri-t);
+  }
+  .nav-logo {
+    grid-column: 2 / 4;
+    grid-row: 1/ 2;
+  }
+  .nav-pop {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+  .nav-per {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+  .nav-gal {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+  }
+  .nav-iPh {
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;
+  }
+
+  /* Copyright */
+  .copyright .copy-content {
+    color: var(--sec-t);
+    display: flex;
+    justify-content: center;
+    column-gap: 5px;
+  }
+  .copyright p {
+    align-self: center;
+    justify-self: center;
+  }
+
+  .copyright a {
+    color: var(--sec-t);
+    font-size: var(--mh6);
+    font-weight: normal;
+    border-left: 1px solid var(--sec-t);
+    padding-left: 5px;
+    padding-right: 5px;
+    align-self: center;
+  }
+}

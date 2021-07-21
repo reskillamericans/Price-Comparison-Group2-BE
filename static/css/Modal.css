@@ -1,0 +1,211 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Inter", sans-serif;
+	overflow: hidden;
+}
+
+nav {
+	display: none;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	position: relative;
+	background-color: #f9f9f9;
+	height: 6em;
+	height: 4.5em;
+	text-align: right;
+}
+
+.logo {
+	position: relative;
+	left: 5em;
+}
+
+.navbar {
+	position: relative;
+	left: 50em;
+	font-weight: 900;
+}
+.register-login {
+	position: relative;
+	left: 60em;
+}
+
+.navbar ul {
+	list-style-type: none;
+}
+header li {
+	float: left;
+	list-style: none;
+}
+header a {
+	padding: 2em;
+	font-size: 1em;
+	font-weight: bold;
+	text-decoration: none;
+	color: #b8b4b4;
+}
+.home:hover {
+	color: #089285;
+}
+.about:hover {
+	color: #089285;
+}
+.faq:hover {
+	color: #089285;
+}
+.blog:hover {
+	color: #089285;
+}
+.contact:hover {
+	color: #089285;
+}
+.register:hover {
+	color: #089285;
+}
+.login:hover {
+	color: #089285;
+}
+
+.container {
+	height: 50vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+h1 {
+	display: flex;
+	text-align: center;
+	color: #f34213;
+	padding: 20px;
+}
+.btn {
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+}
+
+button {
+	background-color: #089285;
+	font-weight: bolder;
+	color: #fcfcfc;
+	padding: 10px 80px 10px 80px;
+	border: none;
+	border-radius: 50px;
+}
+button:hover {
+	cursor: pointer;
+	background-color: #fcfcfc;
+	color: #089285;
+	border: #089285 solid 2px;
+}
+.icons {
+	display: flex;
+	justify-content: center;
+
+	padding-top: 20px;
+}
+.thumbsup {
+	padding-left: 40px;
+	padding-right: 40px;
+}
+.thumbsup:hover {
+	cursor: pointer;
+}
+
+.message-square:hover {
+	cursor: pointer;
+}
+.share-icon {
+	padding-left: 40px;
+	padding-right: 40px;
+}
+.share-icon:hover {
+	cursor: pointer;
+}
+.icon-text {
+	display: flex;
+	justify-content: center;
+	padding: 5px;
+	color: #f34213;
+	font-weight: bolder;
+}
+.like {
+	padding: 5px;
+}
+.comment {
+	padding: 5px;
+}
+.share {
+	padding: 5px;
+}
+.image-items {
+	display: flex;
+	justify-content: center;
+	padding-bottom: 10px;
+}
+
+a {
+	text-decoration: none;
+	color: #089285;
+}
+a:hover {
+	color: #fcfcfc;
+}
+
+@media all and (max-width: 375px) {
+	header {
+		display: none;
+	}
+
+	h1 {
+		display: flex;
+		text-align: center;
+		color: #f34213;
+		padding: 20px;
+		font-size: 20px;
+	}
+
+	.image-items {
+		display: flex;
+		justify-content: center;
+	}
+
+	.container {
+		height: 70vh;
+	}
+
+	nav {
+		padding-top: 10px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: #fcfcfc;
+	}
+	.mobile-icons {
+		display: flex;
+		justify-content: space-evenly;
+		width: 100%;
+	}
+	.mobile-text {
+		display: flex;
+		justify-content: space-evenly;
+		width: 100%;
+		font-size: 14px;
+		color: #b8b4b4;
+		font-weight: bolder;
+	}
+	#home-icon-position {
+		position: relative;
+		right: 10px;
+		color: black;
+	}
+	#login-icon-position {
+		position: relative;
+		left: 10px;
+	}
+}

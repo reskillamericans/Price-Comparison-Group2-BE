@@ -22,7 +22,7 @@ def register_view(request):
           
              messages.success(request, 'Account was created for ' + user)
              
-             return redirect('login')
+             return redirect('accounts:login')
              #return HttpResponseRedirect('login')
             
         
@@ -38,8 +38,9 @@ def login_view(request):
         if user != None:
             # user is valid and active
             login(request, user)
-            return redirect("/")
+            return redirect("home")
         else:
+            print("here")
             request.session['invalid_user'] == True
     return render(request, "accounts/login.html", {"form": form})
 
