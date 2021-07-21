@@ -1,5 +1,5 @@
 from django import forms
-from django.forms import Form
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import get_user_model
 
 
@@ -7,7 +7,7 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 # create registration
-class RegisterForm(forms.Form):
+class RegisterForm(UserCreationForm):
     username = forms.CharField()
     email = forms.EmailField()
     password1 = forms.CharField(

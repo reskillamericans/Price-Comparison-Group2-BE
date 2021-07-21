@@ -7,4 +7,10 @@
     <body>
         <h1>Price Comparison</h1>
     </body>
+
+    {% if user.is_authentictaed %}
+        <a href="{% url 'accounts:logout' %}">Logout</a>
+    {% else %}
+        <a href="{% url 'accounts:login' %}">Signin</a>
+    {% endif %}
 </html>
