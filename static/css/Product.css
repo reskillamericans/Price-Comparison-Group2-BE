@@ -1,0 +1,480 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: #fcfcfc;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+@media screen and (max-width: 770px) {
+    body{
+        overflow-x: hidden;
+    }
+    .perfume {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+header {
+         display: none;
+     }
+
+nav {
+    padding-top:0.625em ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+    
+}
+nav img {
+    position: relative;
+    max-width:100%;
+    height:auto;
+}
+
+.mobile-icons{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 0%;
+    cursor: pointer;
+}
+.mobile-text {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  font-size: 0.625em;
+  color: #b8b4b4;
+  cursor: pointer;
+}
+#home-icon-position {
+    position: relative;
+    right:0.313em ;
+}
+
+#login-icon-position {
+    position: relative;
+}
+#faq-icon-position{
+    position: relative;
+    right: 0.313em;
+}
+.faq-icon {
+    width: 30px;
+    
+}
+
+
+.home-icon:hover {
+    filter: invert(100%) url(#colorFilter);    
+}
+.about-icon:hover {
+    
+    filter: invert(100%) url(#colorFilter);  
+}
+
+.faq-icon:hover {
+    
+    filter: invert(100%) url(#colorFilter); 
+}
+.contact-icon:hover {
+    
+    filter: invert(100%) url(#colorFilter); 
+}
+.login-icon:hover {
+    
+    filter: invert(100%) url(#colorFilter); 
+}
+
+.home-icon-text:hover {
+    color: #089285
+}
+.about-icon-text:hover {
+    color: #089285;
+}
+
+.faq-icon-text:hover {
+    color: #089285;
+    
+}
+.contact-icon-text:hover {
+    color: #089285;
+    
+}
+.login-icon-text:hover {
+    color: #089285;
+    
+}
+.main {
+    align-items: center;
+    overflow-x: hidden;
+    
+}
+.main img {
+    position: relative;
+    max-width:100%;
+    height:auto;
+}
+
+h1 {
+    color: #f34213;
+    font-size: 1.188em;
+    font-weight: 500;
+    margin-top: 1.5em;
+    margin-bottom: 0%;
+    padding-left: .43em;
+    cursor: default;
+}
+
+h2 {
+    color: #f34213;
+    font-size: 0.875em;
+    font-weight: normal;
+    margin-top: 0%;
+    padding-left: .7em;
+    cursor: default;
+}
+
+p {
+    font-size: 0.875em;
+    color: black;
+    line-height: 2em;
+    text-align: initial;
+    padding: 1em;
+    cursor: default;
+    max-width: 100%;
+}
+@media only screen and (min-width:670px) and (max-width:801px) {
+    h1{
+        font-size: 20px;
+    }
+    h2{
+        font-size: 16px;
+    }
+    p {
+        margin: 0;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40em;
+    }
+    .prices {
+        margin: 0;
+        position: absolute;
+        top: 72%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .social-icons {
+        margin: 0;
+        position: absolute;
+        top: 84%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+.prices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+    cursor: default;
+    min-width: 0;
+    
+}
+.left li {
+    color: black;
+    list-style: none;
+}
+
+.right li {
+    color: black;
+    list-style: none;
+    
+}
+
+li.bold { 
+    font-weight: 500;
+}
+
+
+.amazon{
+    position: relative;
+    left: 1.5em;
+}
+.price-a {
+    position: relative;
+    left: 1.5em;
+}
+.ebay {
+    position: relative;
+    left: 4em;
+}
+.price-e {
+    position: relative;
+    left: 3.5em;
+}
+
+button {
+    display: inline-block;
+    position: relative;
+	background-color:#089285;
+	border-radius: 2em;
+    border-style: none;
+	cursor:pointer;
+	color:#ffffff;
+	font-family: 'Inter', sans-serif;
+    font-weight: 500;
+	padding: 0.5em 3em;
+    width: 100%;
+	text-decoration:none;
+}
+button:hover {
+	background-color:#065c53;
+}
+.btn1{
+   margin-top: 1em;
+   position: relative;
+   right: 1em;
+}
+.btn2{
+    margin-top: 1em;
+    position: relative;
+    left: 1em;
+
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    padding-top: 1.250em;
+}
+.like-icon {
+    padding-left: 2.500em;
+    padding-right: 2.500em;
+}
+.like-icon:hover {
+    cursor: pointer;
+    filter: 
+    invert(0)
+    sepia(0)
+    hue-rotate(0deg)
+    saturate(1)
+    brightness(.60);
+}
+  
+.comment-icon:hover {
+    cursor: pointer;
+    filter: 
+    invert(0)
+    sepia(0)
+    hue-rotate(0deg)
+    saturate(1)
+    brightness(.60);
+}
+.share-icon {
+    padding-left: 2.500em;
+    padding-right: 2.500em;
+}
+.share-icon:hover {
+    cursor: pointer;
+    filter: 
+    invert(0)
+    sepia(0)
+    hue-rotate(0deg)
+    saturate(1)
+    brightness(.60);
+}
+.icons-text {
+    display: flex;
+    justify-content: center;
+    padding: 0.313em;
+    color: #f34213;
+    font-size: 0.750em;
+    margin-bottom: 0.313em;
+    cursor: default;
+}
+.like {
+    position: relative;
+    right: 13px;
+    padding: 0.313em;
+}
+.comment {
+    position: relative;
+    left: 0.125em;
+    padding: 0.313em;
+}
+.share {
+    position: relative;
+    left: 15px;
+    padding: 0.313em;
+    
+}
+
+
+/*DESKTOP VIEW*/
+
+@media (min-width: 801px) {
+
+body {
+    position: relative;
+    min-height: 100vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+
+nav {
+display: none;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: #f9f9f9;
+    background-size: cover;
+    height: 3.9em;
+    width: 100%;    
+}
+
+.logo {
+    position: relative;
+    left: 5em;  
+}
+
+.navbar {
+   position: relative;
+   left: 8em;   
+}
+
+.register-login {
+    position: relative;
+    left: 19em;    
+}
+
+.navbar ul {
+    list-style-type: none;
+}
+.register-login ul {
+    list-style-type: none;
+}
+header li {
+    float: left;
+    list-style: none;
+}
+
+header a {
+    padding: 2em;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    color: #b8b4b4;
+}
+
+.home:hover {
+    color: #089285;
+}
+.about:hover {
+    color: #089285;
+}
+.faq:hover {
+    color: #089285;
+}
+.blog:hover {
+    color: #089285;
+}
+.contact:hover {
+    color: #089285;
+}
+.register:hover {
+    color: #089285;
+}
+.login:hover {
+    color: #089285;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: unset;
+    margin-top: 1em;
+    width: -moz-fit-content;
+   
+}
+h2 {
+    font-size: 27px;
+    width: -moz-fit-content;
+}
+
+.container {
+     
+    margin-left: 6em;
+}
+
+.perfume {
+    position: relative;
+    right: 5em;
+    width: -moz-fit-content;   
+}
+
+p {
+    display: table;
+    position: relative;
+    bottom: 20em;
+    left: 10em;
+    margin:auto;
+    font-size: 1em;
+    max-width: 100%;
+    width: 40em;
+    text-align: initial;
+    line-height: 1.5em;
+}
+
+button {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-size: 1em;
+}
+
+.prices {
+    position: relative;
+    width: 400px;
+    bottom: 20em;
+    left: 35em ;
+    
+}
+
+.amazon{
+    position: relative;
+    left: 2em;
+}
+.price-a {
+    position: relative;
+    left: 2em;
+}
+.ebay {
+    position: relative;
+    left: 4.95em;
+    width: 100px;
+}
+.price-e {
+    position: relative;
+    left: 4.4em;
+}
+
+.social-icons {
+    position: absolute;
+    left: 12.3em;
+    bottom: 23em;
+}
+
+}
