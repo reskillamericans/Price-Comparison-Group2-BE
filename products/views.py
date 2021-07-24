@@ -2,8 +2,8 @@ import requests
 from django.shortcuts import render
 from django.http import JsonResponse
 
-def home(requests):
-    return render(requests, "products/index.html")
+def home(request):
+    return render(request, "products/index.html")
 
 def amazon(request):
     url = "https://amazon-products1.p.rapidapi.com/product"
@@ -33,3 +33,9 @@ def ebay(request):
     return JsonResponse(response.json(), safe=False)
 
 
+
+def product_detail(requests, id):
+    product = Products.objects.get(id=id)
+    # print(product)
+    context = { 'product' : product}
+    return render(request, 'the+page.html', context)

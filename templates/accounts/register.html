@@ -21,7 +21,7 @@
         
         <div class="navbar">
             <ul>
-                <li><a href="{% url 'index' %}" class="home">Home</a></li>
+                <li><a href="{% url 'home' %}" class="home">Home</a></li>
                 <li><a href="#" class="about">About Us</a></li>
                 <li><a href="{% url 'faq' %}" class="faq">FAQ</a></li>
                 <li><a href="#" class="blog">Blog</a></li>
@@ -30,8 +30,8 @@
         </div>
         <div class="register-login">
             <ul>
-                <li><a href="{% url 'register' %}" class="register">Register</a></li>
-                <li><a href="{% url 'login' %}" class="login">Login</a></li>
+                <li><a href="{% url 'accounts:register' %}" class="register">Register</a></li>
+                <li><a href="{% url 'accounts:login' %}" class="login">Login</a></li>
             </ul>
         </div>
     </header>
@@ -43,7 +43,7 @@
 
     <div class="form-container">
       <h1>Hello!</h1>
-      <h2>Create a free account. Have an account? <a href="{% url 'login' %}">Log In</a></h2>
+      <h2>Create a free account. Have an account? <a href="{% url 'accounts:login' %}">Log In</a></h2>
         <form method="POST" class="form-group">
 			{% csrf_token %}
             <label for="name">Username</label>
@@ -108,8 +108,8 @@
      <button>Register</button>
 </div>
 <div class="bottom">
-<a href="{% url 'login' %}" class="account">Already have an account?</a>
-<a href="{% url 'login' %}" class="register">Log in</a>
+<a href="{% url 'accounts:login' %}" class="account">Already have an account?</a>
+<a href="{% url 'accounts:login' %}" class="register">Log in</a>
 </div>
 </div>
 </div>

@@ -1,8 +1,7 @@
 <!-- Write the Landing page codes here -->
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    
+    {% load static %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,19 +22,21 @@
         
         <div class="navbar">
             <ul>
-                <li><a href="{% url 'index' %}" class="home">Home</a></li>
+                <li><a href="{% url 'home' %}" class="home">Home</a></li>
                 <li><a href="#" class="about">About Us</a></li>
                 <li><a href="{% url 'faq' %}" class="faq">FAQ</a></li>
                 <li><a href="#" class="blog">Blog</a></li>
                 <li><a href="Contact.html" class="contact">Contact Us</a></li>
             </ul>
+            
         </div>
         <div class="register-login">
             <ul>
-                <li><a href="{% url 'register' %}" class="register">Register</a></li>
-                <li><a href="{% url 'login' %}" class="login">Login</a></li>
+                <li><a href="{% url 'accounts:register' %}" class="register">Register</a></li>
+                <li><a href="{% url 'accounts:login' %}" class="login">Login</a></li>
             </ul>
         </div>
+  
         
     </header>
     
@@ -251,7 +252,7 @@
         <div class="quick-links">
             <h3>Quick Links</h3>
             <ul>
-                <li> <a href="faq.html">FAQ / How to use</a></li>
+                <li> <a href="{% url 'faq' %}">FAQ / How to use</a></li>
                 <li><a href="">Contact Us</a></li>
                 <li> <a href="">Blog</a></li>
                 <li><a href="Product.html">Product Catagoriess</a></li>

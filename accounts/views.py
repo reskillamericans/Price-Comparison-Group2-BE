@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
 from django import forms
@@ -18,12 +19,12 @@ def register_view(request):
     if request.method == 'POST':
          form = RegisterForm(request.POST)
          if form.is_valid():
-            #  form.save()
+             form.save()
              user = form.cleaned_data.get('username')
           
              messages.success(request, 'Account was created for ' + user)
              
-             return redirect('login')
+             return redirect('accounts:login')
              #return HttpResponseRedirect('login')
             
         
@@ -39,7 +40,7 @@ def login_view(request):
         if user != None:
             # user is valid and active
             login(request, user)
-            return redirect("/")
+            return redirect("home")
         else:
         
             request.session['invalid_user'] == True
@@ -47,9 +48,6 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    return redirect("login")
+    return redirect('accounts:login')
 
 
-
-def faq(request):
-    return render(request, "accounts/faq.html")
