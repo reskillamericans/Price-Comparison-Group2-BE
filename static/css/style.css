@@ -1,5 +1,495 @@
 /* Write the Landing page styling here */
 * {
+<<<<<<< HEAD
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+  }
+  
+  body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  
+  nav {
+    display: none;
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: #f9f9f9;
+    height: 6em;
+    height: 4.5em;
+    text-align: right;
+  }
+  
+  .logo {
+    position: relative;
+    left: 5em;
+  }
+  
+  .navbar {
+    position: relative;
+    left: 30em;
+    font-weight: 900;
+  }
+  .register-login {
+    position: relative;
+    left: 50em;
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+  }
+  header li {
+    float: left;
+    list-style: none;
+  }
+  header a {
+    padding: 2em;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    color: #b8b4b4;
+  }
+  .home:hover {
+    color: #089285;
+  }
+  .about:hover {
+    color: #089285;
+  }
+  .faq:hover {
+    color: #089285;
+  }
+  .blog:hover {
+    color: #089285;
+  }
+  .contact:hover {
+    color: #089285;
+  }
+  .register:hover {
+    color: #089285;
+  }
+  .login:hover {
+    color: #089285;
+  }
+  
+  .container_1_mobile {
+    display: none;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .flex-search {
+    position: relative;
+    left: 2.5cm;
+    top: 2cm;
+  }
+  
+  .product-search {
+    width: 100%;
+    height: 50vh;
+    background-image: url(images/Landing-images/background-search.svg);
+    background-repeat: none;
+    background-size: cover;
+  }
+  h1 {
+    padding-bottom: 20px;
+  }
+  
+  .search-ptag {
+    padding-bottom: 35px;
+  }
+  
+  #search-bar {
+    width: 12cm;
+    padding: 10px;
+    border-radius: 50px;
+    background: transparent;
+    padding-left: 50px;
+    text-decoration-color: #089285;
+    border-color: #089285;
+  }
+  .search-icon {
+    position: relative;
+    right: 11.5cm;
+    top: 6px;
+  }
+  
+  h2 {
+    position: relative;
+    left: 8cm;
+    padding-top: 20px;
+  }
+  
+  .container-2 {
+    display: flex;
+    position: relative;
+  
+    overflow-x: scroll;
+    width: 100%;
+  }
+  
+  .chanel-product {
+    display: flex;
+  
+    padding: 20px;
+  }
+  .chanel-text {
+    width: 100px;
+    font-size: 10px;
+    padding: 20px;
+  }
+  
+  .dell-product {
+    display: flex;
+  
+    padding: 20px;
+  }
+  .dell-text {
+    width: 100px;
+    font-size: 10px;
+    padding: 20px;
+  }
+  
+  .nikon-product {
+    display: flex;
+  
+    padding: 20px;
+  }
+  .nikon-text {
+    padding: 20px;
+    font-size: 10px;
+    width: 100px;
+  }
+  .iphone-product {
+    display: flex;
+  
+    padding: 20px;
+  }
+  .iphone-text {
+    padding: 20px;
+    font-size: 10px;
+    width: 100px;
+  }
+  .airpods-product {
+    display: flex;
+  
+    padding: 20px;
+  }
+  .airpods-text {
+    padding: 20px;
+    font-size: 10px;
+    width: 100px;
+  }
+  .puma-product {
+    display: flex;
+  
+    padding: 20px;
+  }
+  .puma-text {
+    padding: 20px;
+    font-size: 10px;
+    width: 100px;
+  }
+  .bodycare-product {
+    display: flex;
+  
+    padding: 20px;
+  }
+  .bodycare-text {
+    padding: 20px;
+    font-size: 10px;
+    width: 100px;
+  }
+  .birkenstock-product {
+    display: flex;
+  
+    padding: 20px;
+  }
+  .birkenstock-text {
+    padding: 20px;
+    font-size: 10px;
+    width: 100px;
+  }
+  .polo-product {
+    display: flex;
+  
+    padding: 20px;
+  }
+  .polo-text {
+    padding: 20px;
+    font-size: 10px;
+    width: 100px;
+  }
+  .ring-product {
+    display: flex;
+  
+    padding: 20px;
+  }
+  .ring-text {
+    padding: 20px;
+    font-size: 10px;
+    width: 100px;
+  }
+  .product-ptag {
+    padding-bottom: 10px;
+  }
+  .grey-text {
+    color: #b8b4b4;
+    padding-bottom: 10px;
+  }
+  .price-text {
+    padding: 10px;
+  }
+  .amazon {
+    padding-bottom: 10px;
+  }
+  .compare-price-btn {
+    border-radius: 50px;
+    border: teals;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 5px;
+    background: transparent;
+    color: teal;
+  }
+  .compare-price-btn:hover {
+    background-color: #089285;
+    color: #fcfcfc;
+  }
+  .container-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .sub {
+    width: 100%;
+    height: 60vh;
+    background-image: url(images/Landing-images/background-blog.svg);
+    background-repeat: none;
+    background-size: cover;
+  }
+  .sub-text {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 125px;
+  }
+  .email-sub {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+  }
+  .sub-btn {
+    padding: 20px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    font-size: 10px;
+    border: none;
+    background-color: #089285;
+    color: #fcfcfc;
+    width: 100px;
+  }
+  #email {
+    width: 400px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    border-color: #089285;
+  }
+  .container-4 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    position: relative;
+  
+    height: 40vh;
+  }
+  ul {
+    list-style: none;
+  }
+  li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  
+  h3 {
+    font-weight: 700;
+  }
+  .social {
+    padding: 5px;
+  }
+  footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+  }
+  a {
+    color: #089285;
+    text-decoration: none;
+  }
+  
+  .social-links a:hover {
+    background-color: black;
+  }
+  
+  .mobile_footer {
+    display: none;
+  }
+  
+  .h2_mobile {
+    display: none;
+  }
+  
+  @media all and (max-width: 375px) {
+    body {
+      overflow-x: hidden;
+    }
+  
+    header {
+      display: none;
+    }
+  
+    nav {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 10px;
+      padding-top: 10px;
+    }
+    .hamberger__and__logo {
+      width: 100%;
+    }
+    .hamberger_pic {
+      position: relative;
+      left: 10px;
+    }
+    .logo {
+      position: relative;
+      left: 4cm;
+    }
+  
+    .navbar-mobile {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  
+    .container_1_mobile {
+      display: flex;
+      width: 100%;
+    }
+  
+    .container {
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .background-search {
+      position: relative;
+  
+      width: 100%;
+    }
+  
+    h2 {
+      display: none;
+    }
+  
+    .h2_mobile {
+      display: flex;
+      font-size: 25px;
+      font-weight: 700;
+      padding-top: 20px;
+    }
+  
+    .container-2 {
+      display: flex;
+      flex-direction: row;
+      overflow-x: scroll;
+      width: 100%;
+    }
+  
+    .container-3 {
+      width: 100%;
+    }
+  
+    .sub {
+      width: 100%;
+      height: 60vh;
+    }
+    .sub-text {
+      font-size: 20px;
+      font-weight: 700;
+      text-align: center;
+      padding-top: 150px;
+    }
+    .email-sub {
+      display: flex;
+      justify-content: center;
+      padding-top: 50px;
+    }
+    .sub-btn {
+      padding: 20px;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+      font-size: 10px;
+      border: none;
+      background-color: #089285;
+      color: #fcfcfc;
+      width: 100px;
+    }
+    #email {
+      width: 300px;
+      padding-left: 25px;
+      padding-right: 25px;
+      border-bottom-left-radius: 15px;
+      border-top-left-radius: 15px;
+      border-color: #089285;
+    }
+  
+    .container-4 {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 100%;
+      position: relative;
+  
+      height: 70vh;
+    }
+  
+    footer {
+      display: none;
+      justify-content: center;
+      width: 50px;
+      position: relative;
+    }
+  
+    .mobile_footer {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .mobile_copyright {
+      position: relative;
+      left: 5px;
+      padding-top: 150px;
+      padding-bottom: 50px;
+    }
+  }
+  
+=======
 	margin: 0;
 	padding: 0;
 	font-family: "Inter", sans-serif;
@@ -726,3 +1216,4 @@ a {
 		margin: 4em 0em 0em;
 	}
 }
+>>>>>>> 217f2869813d4bc1854752828757ca75fde03598
