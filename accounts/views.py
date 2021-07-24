@@ -48,3 +48,8 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect("login")
+
+
+
+def faq(request):
+    return render(request, "accounts/faq.html")

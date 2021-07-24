@@ -1,0 +1,224 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ Page</title>
+    <link
+      rel="shortcut icon"
+      href="images/login-images/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="icon"
+      href="images/login-images/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="NavFont.css" />
+    <link rel="stylesheet" href="{% static 'faq/faq.css' %}" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!--  Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/a3c1e4db5c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="images/Model-images/brand&logo.svg" alt="scalables-logo" />
+      </div>
+
+      <div class="navbar">
+        <ul>
+          <li><a href="{% url 'index' %}" class="home">Home</a></li>
+          <li><a href="#" class="about">About Us</a></li>
+          <li><a href="{% url 'faq' %}" class="faq">FAQ</a></li>
+          <li><a href="#" class="blog">Blog</a></li>
+          <li><a href="Contact.html" class="contact">Contact Us</a></li>
+          <li><a href="{% url 'register' %}" class="register">Register</a></li>
+          <li><a href="{% url 'login' %}" class="login">Login</a></li>
+        </ul>
+      </div>
+      <!-- <div class="register-login"> 
+            <ul>
+                <li><a href="Signup.html" class="login">Register</a></li>
+                <li><a href="Login.html" class="register">Login</a></li>
+             </ul>
+         </div> -->
+    </header>
+
+    <nav>
+      <div class="topnav">
+        <a href="{% url 'index' %}"
+          ><img
+            src="images/Model-images/brand&logo.svg"
+            alt="logo"
+            class="logo"
+        /></a>
+
+        <div id="myLinks">
+          <a href="{% url 'index' %}" class="home">Home</a>
+          <a href="#" class="about">About Us</a>
+          <a href="{% url 'faq' %}" class="faq">FAQ</a>
+          <a href="#" class="blog">Blog</a>
+          <a href="Contact.html" class="contact">Contact Us</a>
+          <a href="{% url 'register' %}" class="register">Register</a>
+          <a href="{% url 'login' %}" class="login">Login</a>
+        </div>
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+      <div class="navbar-mobile">
+        <a href="">Popular</a>
+        <a href="">Perfumes</a>
+        <a href="">Galaxy s20</a>
+        <a href="">Iphone</a>
+      </div>
+    </nav>
+    <section class="faq-sec">
+      <div class="img-sec">
+        <img class="stuff" src="/images/stuff1.png" alt="Image of purse" />
+        <h1 class="Title">FAQ / How to Use</h1>
+      </div>
+
+      <div class="content">
+        <div class="qna">
+          <h2>Q: Do i need to sign up before i can use the website?</h2>
+          <h3 class="ans">
+            A: No you do not have to sign up if you are a visitor to the site
+          </h3>
+        </div>
+        <div class="qna">
+          <h2>Q: Can i report any product issue i have here?</h2>
+          <h3 class="ans">
+            A: No, this is just a price comparison site between ebay and amazon
+          </h3>
+        </div>
+        <div class="qna">
+          <h2>Q: Are price of product directly from the vendor?</h2>
+          <h3 class="ans">
+            A: Yes product prices are directly fixed from the brand’s website.
+            Scalables has no control over pricing
+          </h3>
+        </div>
+        <div class="qna">
+          <h2>Q: Is there a search button for products?</h2>
+          <h3 class="ans">
+            A: Yes there is a search engine to anable users search through
+            categories of product availables
+          </h3>
+        </div>
+        <div class="qna">
+          <h2>
+            Q: Is there a link to re-direct to the store i want to purchase
+            from?
+          </h2>
+          <h3 class="ans">
+            A: Yes users are redirected from the site to the store link after
+            being clicked on
+          </h3>
+        </div>
+        <div class="qna">
+          <h2>Q: How many brands are there on the site?</h2>
+          <h3 class="ans">
+            A: On Scalables, there are only just two brands being compared
+          </h3>
+        </div>
+        <div class="qna">
+          <h2>Q: Can i purchase directly from scalables</h2>
+          <h3 class="ans">
+            A: No, sales are not made directly from scalables site. But there is
+            a re-direct link to the store of choice
+          </h3>
+        </div>
+      </div>
+    </section>
+    <section class="home-sec">
+      <div class="content">
+        <h2 class="home-title">Was this Helpful?</h2>
+        <button class="y-btn">Yes</button>
+        <button class="oth-btn mbtn">No</button>
+        <button class="oth-btn rbtn">Back to Home</button>
+      </div>
+    </section>
+    <section class="footer">
+      <div class="content">
+        <div class="quick-links">
+          <h3 class="bold-title">Quick Links</h3>
+          <a class="g-a" href="{% url 'faq' %}">FAQ / How to use</a>
+          <a class="g-a" href="Contact.html">Contact us</a>
+          <a class="g-a" href="">Blog</a>
+          <a class="g-a" href="">Product Categories</a>
+        </div>
+        <div class="stores">
+          <h3 class="bold-title store-text">Stores in Scalables</h3>
+          <img class="ebay" src="/images/ebay.png" alt="ebay Picture" />
+          <img class="amazon" src="/images/amazon.png" alt="Amazon Picture" />
+        </div>
+        <div class="follow">
+          <h3 class="bold-title">Follow Us</h3>
+          <div>
+            <a class="social" href=""><i class="fab fa-facebook-f g-a"></i></a>
+
+            <a class="social" href=""><i class="fab fa-twitter g-a"></i></a>
+
+            <a class="social" href=""><i class="fab fa-instagram g-a"></i></a>
+          </div>
+        </div>
+        <div class="email">
+          <h3 class="bold-title">Email Support</h3>
+          <a class="g-a" href="mailto:info@scalables.com">info@scalables.com</a>
+        </div>
+      </div>
+    </section>
+    <section class="disclaimer">
+      <div class="content">
+        <p>
+          Disclaimer: Scalables.com only acts as an online price comparism
+          website, all product names, trademarks, service marks, logos, brands,
+          designs featured within this site are the sole property of their
+          respective brand owners and are only provided for the purpose of this
+          site. Scalables.com acts as an independent party and shall not be
+          considered the agent, employee, joint venture partner or otherwise of
+          such owners or right holders.
+        </p>
+      </div>
+    </section>
+    <section class="copyright">
+      <div class="copy-content">
+        <p>Copyright 2021 Scalables Inc.</p>
+        <p>All Rights Reserved.</p>
+        <a href="footer-copyright">Privacy</a>
+        <a href="footer-copyright">Cookies</a>
+        <a href="footer-copyright">User Agreement</a>
+        <a href="footer-copyright">About</a>
+      </div>
+    </section>
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myLinks");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -26,8 +26,9 @@ from accounts.views import (
     register_view,
     
 )
+from faq.views import faq
 #==========
-from products.views import home
+from products.views import home, amazon, ebay
 #>>>>>>> dev
 
 urlpatterns = [
@@ -38,6 +39,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 #<<<<<<< backenddev1
     path('', include('accounts.urls')),
+    path('', include('faq.urls')),
 #=======
     path('', home, name="index"),
     path('blog/', include('blog.urls')),
