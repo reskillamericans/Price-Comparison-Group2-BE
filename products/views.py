@@ -1,6 +1,7 @@
 import requests
 from django.shortcuts import render
 from django.http import JsonResponse
+from .models import Product
 
 def home(request):
     return render(request, "products/index.html")
