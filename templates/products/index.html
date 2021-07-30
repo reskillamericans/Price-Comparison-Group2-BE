@@ -63,14 +63,14 @@
                 <p class="search-ptag">Get the best price deal on product you want <br> wherever you are.</p>
                 <label for="search-bar"></label>
                 <input type="search" id="search-bar" name="search-bar" placeholder="search for product">
-                <img src="images/Landing-images/search-icon.svg" alt="search-icon" class="search-icon">
+                <img src="{% static 'images/Landing-images/search-icon.svg' %}" alt="search-icon" class="search-icon">
             </div>
         </div>
 
     </div>
     
 <div class="container_1_mobile">
-    <img src="images/Landing-images/background-search.svg" alt="background-search" class="background-search">
+    <img src="{% static 'images/Landing-images/background-search.svg' %}" alt="background-search" class="background-search">
 </div>
 <div class="h2_mobile">
     Featured Products
@@ -82,21 +82,21 @@
         
         <div class="chanel-product">
             <div class="chanel-img">
-                <img src="images/Landing-images/chanel-product.svg" alt="chanel" class="chanel" width="150px">
+                <img src="{% static 'images/Landing-images/chanel-product.svg' %}" alt="chanel" class="chanel" width="150px">
 
             </div>
             <div class="chanel-text">
                 <p class="product-ptag">Chanel No 5 eau de <br> parfum 1,5 ml 0.005 <br> fl oz minature bottle</p>
                 <div class="grey-text">Brand New, Chanel</div>
                 <div class="price-text">$22.50</div>
-                <img src="images/Landing-images/eBay-Icon.svg" alt="eBay-Icon" class="ebay-icon"> <a href=""><span>avalible offer</span></a>
+                <img src="{% static 'images/Landing-images/eBay-Icon.svg' %}" alt="eBay-Icon" class="ebay-icon"> <a href=""><span>avalible offer</span></a>
 
             </div>
         </div>
 
         <div class="dell-product">
             <div class="dell-img">
-                <img src="images/Landing-images/dell-product.svg" alt="dell" class="dell" width="200px">
+                <img src="{% static 'images/Landing-images/dell-product.svg' %}" alt="dell" class="dell" width="200px">
 
             </div>
             <div class="dell-text">
@@ -110,13 +110,13 @@
 
         <div class="nikon-product">
             <div class="nikon-img">
-                <img src="images/Landing-images/nikon-product.svg" alt="nikon" class="nikon" width="150px">
+                <img src="{% static 'images/Landing-images/nikon-product.svg' %}" alt="nikon" class="nikon" width="150px">
             </div>
             <div class="nikon-text">
                 <p class="product-ptag">Nikon Z50 Mirrorless <br> 20.9MP 4K Digital <br>Camera</p>
                 <div class="grey-text">Brand New. Nikon</div>
                 <div class="price-text">$856</div>
-                <img src="images/Landing-images/Amazon-Logo.svg" alt="Amazon-Logo" class="amazon"> <a href=""><span>avalible offer</span></a>
+                <img src="{% static 'images/Landing-images/Amazon-Logo.svg' %}" alt="Amazon-Logo" class="amazon"> <a href=""><span>avalible offer</span></a>
 
             </div>
         </div>
@@ -138,14 +138,14 @@
 
         <div class="airpods-product">
             <div class="airpods-img">
-                <img src="images/Landing-images/Airpods-product.svg" alt="airpods" class="airpods" width="150px">
+                <img src="{% static 'images/Landing-images/Airpods-product.svg' %}" alt="airpods" class="airpods" width="150px">
 
             </div>
             <div class="airpods-text">
                 <p class="product-ptag">Apple Airpods Pro <br> -with Wireless <br> Charging case.</p>
                 <div class="grey-text">Pre-Owned. Apple</div>
                 <div class="price-text">$650</div>
-                <img src="images/Landing-images/eBay-Icon.svg" alt="eBay-Icon" class="ebay-icon"><a href=""><span>avalible offer</span></a>
+                <img src="{% static 'images/Landing-images/eBay-Icon.svg' %}" alt="eBay-Icon" class="ebay-icon"><a href=""><span>avalible offer</span></a>
 
             </div>
 
@@ -153,29 +153,29 @@
 
         <div class="puma-product">
             <div class="puma-img">
-                <img src="images/Landing-images/puma-product.svg" alt="puma" class="puma" width="200px">
+                <img src="{% static 'images/Landing-images/puma-product.svg' %}" alt="puma" class="puma" width="200px">
             
             </div>
             <div class="puma-text">
                 <p class="product-ptag">Puma Caracal Unisex <br> Street Sneaker Black</p>
                 <div class="grey-text">Brand New. PUMA</div>
                 <div class="price-text">$650</div>
-                <button class="compare-price-btn">compare prices</button>
-
+                <!-- <button class="compare-price-btn"><a href= "https://www.amazon.com/Birkenstock-Unisex-Arizona-Essentials-Sandals/dp/B06XHPBW56/ref=sr_1_1?dchild=1&pd_rd_r=3eb19c7f-eb50-414b-b050-c3398338383b&pd_rd_w=PsNAN&pd_rd_wg=NFNRr&pf_rd_p=4144661d-07c2-44eb-8620-54d3031b2d54&pf_rd_r=C2BXGZX8M04WAM50TNWG&qid=1627607309&s=apparel&sr=1-1"></a>compare prices</button> -->
+                <a href="https://price-comparison-fe-2.netlify.app/item.html"><button class="oth-btn rbtn">compare prices</button></a>
             </div>
 
         </div>
 
         <div class="bodycare-product">
             <div class="bodycare-img">
-                <img src="images/Landing-images/bodycare-product.svg" alt="bodycare" class="bodycare" width="150px">
+                <img src="{% static 'images/Landing-images/bodycare-product.svg' %}" alt="bodycare" class="bodycare" width="150px">
 
             </div>
             <div class="bodycare-text">
                 <p class="product-ptag">The Ordinary - Anti <br> Age Kit</p>
                 <div class="grey-text">Brand New</div>
                 <div class="price-text">$220.45</div>
-                <img src="images/Landing-images/Amazon-Logo.svg" alt="Amazon-Logo" class="amazon"><a href=""><span>avalible offer</span></a>
+                <img src="{% static 'images/Landing-images/Amazon-Logo.svg' %}" alt="Amazon-Logo" class="amazon"><a href=""><span>avalible offer</span></a>
 
             </div>
 
@@ -183,14 +183,14 @@
         
         <div class="birkenstock-product">
             <div class="birkenstock-img">
-                <img src="images/Landing-images/birkenstock-product.svg" alt="birkenstock" class="birkenstock" width="150px">
+                <img src="{% static 'images/Landing-images/birkenstock-product.svg' %}" alt="birkenstock" class="birkenstock" width="150px">
 
             </div>
             <div class="birkenstock-text">
                 <p class="product-ptag">Birkenstock Arizona <br> Black Size 4-8</p>
                 <div class="grey-text">Brand New</div>
                 <div class="price-text">$63.50</div>
-                <img src="images/Landing-images/eBay-Icon.svg" alt="eBay-Icon" class="ebay-icon"><a href=""><span>avalible offer</span></a>
+                <img src="{% static 'images/Landing-images/eBay-Icon.svg' %}" alt="eBay-Icon" class="ebay-icon"><a href=""><span>avalible offer</span></a>
 
             </div>
 
@@ -198,14 +198,14 @@
 
         <div class="polo-product">
             <div class="polo-img">
-                <img src="images/Landing-images/polo-product.svg" alt="polp" class="polo" width="150px">
+                <img src="{% static 'images/Landing-images/polo-product.svg' %}" alt="polp" class="polo" width="150px">
 
             </div>
             <div class="polo-text">
                 <p class="product-ptag">Men Polo Classic fit <br> Size XL</p>
                 <div class="grey-text">Brand New</div>
                 <div class="price-text">$45.25</div>
-                <img src="images/Landing-images/Amazon-Logo.svg" alt="Amazon-Logo" class="amazon"><a href=""><span>avalible offer</span></a>
+                <img src="{% static 'images/Landing-images/Amazon-Logo.svg' %}" alt="Amazon-Logo" class="amazon"><a href=""><span>avalible offer</span></a>
 
             </div>
 
@@ -213,7 +213,7 @@
 
         <div class="ring-product">
             <div class="ring-img">
-                <img src="images/Landing-images/rings-product.svg" alt="ring" class="ring" width="150px">
+                <img src="{% static 'images/Landing-images/rings-product.svg' %}" alt="ring" class="ring" width="150px">
 
             </div>
             <div class="ring-text">
@@ -262,8 +262,8 @@
         <div class="stores">
             <h3>Stores on Scalables</h3>
             <div class="stores-img">
-                <img src="images/Landing-images/eBay-Icon.svg" alt="eBay-Icon" class="ebay-icon">
-                <img src="images/Landing-images/Amazon-Logo.svg" alt="Amazon-Logo" class="amazon">
+                <img src="{% static 'images/Landing-images/eBay-Icon.svg' %}" alt="eBay-Icon" class="ebay-icon">
+                <img src="{% static 'images/Landing-images/Amazon-Logo.svg' %}" alt="Amazon-Logo" class="amazon">
             </div>
 
         </div>
@@ -271,9 +271,9 @@
         <div class="Follow">
             <h3>Follow Us</h3>
             <div class="social-links">
-                <a href="https://www.facebook.com/"><img src="images/Landing-images/facebook-pic.svg" alt="facebook" class="social" ></a>
-                <a href="https://twitter.com/home"><img src="images/Landing-images/twitter-pic.svg" alt="twitter" class="social" ></a>
-                <a href="https://www.instagram.com/"><img src="images/Landing-images/instagram-pic.svg" alt="instagram" class="social" ></a>
+                <a href="https://www.facebook.com/"><img src="{% static 'images/Landing-images/facebook-pic.svg' %}" alt="facebook" class="social" ></a>
+                <a href="https://twitter.com/home"><img src="{% static 'images/Landing-images/twitter-pic.svg' %}" alt="twitter" class="social" ></a>
+                <a href="https://www.instagram.com/"><img src="{% static 'images/Landing-images/instagram-pic.svg' %}" alt="instagram" class="social" ></a>
 
             </div>
 
@@ -282,13 +282,13 @@
     </div>
 
     <div class="mobile_footer">
-        <img src="images/Landing-images/mobile footer.svg" alt="mobile_disclaimer" class="mobile_disclaimer">
-        <img src="images/Landing-images/copyright mobile.svg" alt="mobile_copyright" class="mobile_copyright">
+        <img src="{% static 'images/Landing-images/mobile footer.svg' %}" alt="mobile_disclaimer" class="mobile_disclaimer">
+        <img src="{% static 'images/Landing-images/copyright mobile.svg' %}" alt="mobile_copyright" class="mobile_copyright">
 
     </div>
 
     <footer>
-        <img src="images/Landing-images/copyright.svg" alt="copyright" class="copyright">
+        <img src="{% static 'images/Landing-images/copyright.svg' %}" alt="copyright" class="copyright">
     </footer>
 
 
