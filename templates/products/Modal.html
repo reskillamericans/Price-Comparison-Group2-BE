@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/Modal.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+    <title>Summary Model</title>
+    <link rel="shortcut icon" href="images/Model-images/brand&logo.svg" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/Model-images/brand&logo.svg" alt="scalables-logo">
+        </div>
+        
+        <div class="navbar">
+            <ul>
+                <li><a href="{% url 'home' %}" class="home">Home</a></li>
+                <li><a href="#" class="about">About Us</a></li>
+                <li><a href="{% url 'faq' %}" class="faq">FAQ</a></li>
+                <li><a href="#" class="blog">Blog</a></li>
+                <li><a href="#" class="contact">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="register-login">
+            <ul>
+                <li><a href="{% url 'register' %}" class="register">Register</a></li>
+                <li><a href="{% url 'login' %}" class="login">Login</a></li>
+            </ul>
+        </div>
+        
+    </header> 
+    
+
+    <nav>
+        <div class="mobile-icons">
+            <img src="images/Model-images/home-icon.svg" alt="home-icon" class="home-icon" id="home-icon-position">
+            <img src="images/Model-images/about-icon.svg" alt="about-icon" class="about-icon">
+            <img src="images/Model-images/faq-icon.svg" alt="faq-icon" class="faq-icon">
+            <img src="images/Model-images/contact-icon.svg" alt="contact-icon" class="contact-icon">
+            <img src="images/Model-images/login-icon.svg" alt="login-icon" class="login-icon" id="login-icon-position">
+        </div>
+        <div class="mobile-text">
+            <div id="home-text" class="home-icon">Home</div>
+            <div id="about-text" class="about-icon">About Us</div>
+            <div id="faq-text" class="faq-icon">FAQ</div>
+            <div id="contact-text" class="contact-icon">Contact Us</div>
+            <div id="login-text" class="login-icon">Login</div>
+
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="flex-items">
+            <h1>Thank You For Using Scalables <br> Share Your Experience</h1>
+            <div class="btn">
+                <a id="home-btn" href="{% url 'index' %}"><button>Return to Home Page</button></a>
+            </div>
+            <div class="icons">
+                <img src="images/Model-images/fi_thumbs-up.svg" alt="fi_thumbs-up" class="thumbsup">
+                <img src="images/Model-images/fi_message-square.svg" alt="fi_message-square" class="message-square">
+                <img src="images/Model-images/fi_share.svg" alt="fi_share" class="share-icon">
+            </div>
+            <div class="icon-text">
+                <div class="like">Like</div>
+                <div class="comment">Comment</div>
+                <div class="share">Share</div>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <div class="image-items">
+            <img src="images/Model-images/Rectangle 8.svg" alt="purse" class="purse" width="250px">
+            <img src="images/Model-images/Rectangle 9.svg" alt="diamonds" class="diamonds" width="250px">
+            <img src="images/Model-images/Rectangle 6.svg" alt="gucci" class="gucci" width="250px">
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>

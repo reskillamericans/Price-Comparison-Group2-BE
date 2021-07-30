@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet"> 
     <link rel="icon" type="image/png" sizes="32x32" href="./images/signup-images/Logo.png">
-    <link rel="stylesheet" href="{% static 'register.css' %}">
+    <link rel="stylesheet" href="{% static 'accounts/register.css' %}">
 </head>
 <body>
 
@@ -21,9 +21,9 @@
         
         <div class="navbar">
             <ul>
-                <li><a href="index.html" class="home">Home</a></li>
+                <li><a href="{% url 'home' %}" class="home">Home</a></li>
                 <li><a href="#" class="about">About Us</a></li>
-                <li><a href="faq.html" class="faq">FAQ</a></li>
+                <li><a href="{% url 'faq' %}" class="faq">FAQ</a></li>
                 <li><a href="#" class="blog">Blog</a></li>
                 <li><a href="Contact.html" class="contact">Contact Us</a></li>
             </ul>
