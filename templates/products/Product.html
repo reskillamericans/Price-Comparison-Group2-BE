@@ -61,22 +61,18 @@
     <div class="container">
         
        <div class="main">
-            <!-- <h1>Tom Ford</h1>
-            <h2>Black Orchid Eau de Parfum Spray
-                 1.7 oz</h2> -->
+            <h1>{{product.name}}</h1>
+            <!-- <h2>{{product.name}}</h2> -->
             <div class="product-images"><img src="{{product.image}}" alt="{{product.name}}"></div>
-            <!-- <p>A luxurious and sensual fragrance of rich, dark accords and an alluring potion of black
-                orchids, and spice, Tom Ford's Black Orchid is both modern and timeless. Bottled in 
-                fluted, black-glass, Black Orchid makes an unforgettable statement of iconic style and
-                wordly glamour.
-            </p> -->
+            <p>{{product.name}}.
+            </p>
         
            <div class="prices">
             <div class="left">
             <ul>
                 <li class="bold amazon">Amazon</li>
             
-                <li class="price-a">{{ product.price_amazon}}</li>
+                <li class="price-a">${{ product.price_amazon}}</li>
             </ul> 
             <button class="btn1">Buy Now</button>
             </div>
@@ -84,7 +80,7 @@
            <div class="right">
             <ul>
                 <li class="bold ebay">ebay</li>
-                <li class="price-e">{{ product.price_ebay}}</li>
+                <li class="price-e">${{ product.price_ebay}}</li>
             </ul>
                 <button class="btn2">Buy Now</button>
             </div>

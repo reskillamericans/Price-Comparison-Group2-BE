@@ -11,8 +11,8 @@ class Product(models.Model):
     price_amazon = models.DecimalField(max_digits=4, decimal_places=2)
     price_ebay = models.DecimalField(max_digits=4, decimal_places=2)
     condition = models.CharField(max_length=25)  #New or Used
-    # image = models.CharField(max_length=300, default='DEFAULT VALUE')
-    image = models.ImageField(upload_to='images/product-images')
+    image = models.CharField(max_length=300, default='')
+    # image = models.ImageField(upload_to='images/product-images')
     slug = models.SlugField(max_length=255)
     class Meta:
         verbose_name_plural = 'Products'
