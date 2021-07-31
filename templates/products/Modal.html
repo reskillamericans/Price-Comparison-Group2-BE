@@ -17,7 +17,7 @@
 <body>
     <header>
         <div class="logo">
-            <img src="images/Model-images/brand&logo.svg" alt="scalables-logo">
+            <img src="{% static 'images/Model-images/brand&logo.svg' %}" alt="scalables-logo">
         </div>
         
         <div class="navbar">
@@ -41,11 +41,11 @@
 
     <nav>
         <div class="mobile-icons">
-            <img src="images/Model-images/home-icon.svg" alt="home-icon" class="home-icon" id="home-icon-position">
-            <img src="images/Model-images/about-icon.svg" alt="about-icon" class="about-icon">
-            <img src="images/Model-images/faq-icon.svg" alt="faq-icon" class="faq-icon">
-            <img src="images/Model-images/contact-icon.svg" alt="contact-icon" class="contact-icon">
-            <img src="images/Model-images/login-icon.svg" alt="login-icon" class="login-icon" id="login-icon-position">
+            <img src="{% static 'images/Model-images/home-icon.svg' %}" alt="home-icon" class="home-icon" id="home-icon-position">
+            <img src="{% static 'images/Model-images/about-icon.svg' %}" alt="about-icon" class="about-icon">
+            <img src="{% static 'images/Model-images/faq-icon.svg' %}" alt="faq-icon" class="faq-icon">
+            <img src="{% static 'images/Model-images/contact-icon.svg' %}" alt="contact-icon" class="contact-icon">
+            <img src="{% static 'images/Model-images/login-icon.svg' %}" alt="login-icon" class="login-icon" id="login-icon-position">
         </div>
         <div class="mobile-text">
             <div id="home-text" class="home-icon">Home</div>
@@ -65,9 +65,9 @@
                 <a id="home-btn" href="{% url 'index' %}"><button>Return to Home Page</button></a>
             </div>
             <div class="icons">
-                <img src="images/Model-images/fi_thumbs-up.svg" alt="fi_thumbs-up" class="thumbsup">
-                <img src="images/Model-images/fi_message-square.svg" alt="fi_message-square" class="message-square">
-                <img src="images/Model-images/fi_share.svg" alt="fi_share" class="share-icon">
+                <img src="{% static 'images/Model-images/fi_thumbs-up.svg' %}" alt="fi_thumbs-up" class="thumbsup">
+                <img src="{% static 'images/Model-images/fi_message-square.svg' %}" alt="fi_message-square" class="message-square">
+                <img src="{% static 'images/Model-images/fi_share.svg' %}" alt="fi_share" class="share-icon">
             </div>
             <div class="icon-text">
                 <div class="like">Like</div>
@@ -79,9 +79,9 @@
     </div>
     <footer>
         <div class="image-items">
-            <img src="images/Model-images/Rectangle 8.svg" alt="purse" class="purse" width="250px">
-            <img src="images/Model-images/Rectangle 9.svg" alt="diamonds" class="diamonds" width="250px">
-            <img src="images/Model-images/Rectangle 6.svg" alt="gucci" class="gucci" width="250px">
+            <img src="{% static 'images/Model-images/Rectangle 8.svg' %}" alt="purse" class="purse" width="250px">
+            <img src="{% static 'images/Model-images/Rectangle 9.svg' %}" alt="diamonds" class="diamonds" width="250px">
+            <img src="{% static 'images/Model-images/Rectangle 6.svg' %}" alt="gucci" class="gucci" width="250px">
         </div>
     </footer>
 

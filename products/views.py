@@ -1,9 +1,16 @@
 import requests
 from django.shortcuts import render
 from django.http import JsonResponse
+from .models import Product
 
-def home(request):
-    return render(request, "products/index.html")
+def home(requests):
+    product = Product.objects.all()
+
+    #Search item
+    product_name = requests.GET.get('product_name')
+    if product_name !='' and product_name is not None:
+        product = product.filter(name__icontains=product_name)
+    return render(requests, "products/index.html")
 
 def amazon(request):
     url = "https://amazon-products1.p.rapidapi.com/product"
@@ -34,8 +41,8 @@ def ebay(request):
 
 
 
-def product_detail(requests, id):
-    product = Products.objects.get(id=id)
+def product_detail(request, id):
+    product = Product.objects.get(id=id)
     # print(product)
     context = { 'product' : product}
-    return render(request, 'the+page.html', context)
+    return render(request, "products/Product.html", context)
