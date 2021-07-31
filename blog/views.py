@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404 
 from django.http import HttpResponse
-from django.views.generic import ListView,DetailView
+#from django.views.generic import ListView,DetailView
 from products.models import Product
+from .models import Like
 from django.urls import reverse
 import json
 
@@ -27,25 +28,32 @@ def details(request, id):
 
 
 def like_view(request):
-    #user =request.user
+    #user =request.user.id
+    
     if (request.method=="POST"):
-       if request.POST.get("operation") == "like_submit" and request.is_ajax():
-         content_id=request.POST.get("content_id",None)
-         content=get_object_or_404(Product,pk=content_id)
-         if content.likes.filter(id=request.user.id): #already liked the content
-            content.likes.remove(request.user) #remove user from likes 
-            liked=False
-         else:
-             content.likes.add(request.user) 
-             liked=True
-         ctx={"likes_count":content.total_likes(),"liked":liked,"content_id":content_id}
-         return HttpResponse(json.dumps(ctx), content_type='application/json')
+        if request.POST.get("operation") == "like_submit" and request.is_ajax():
+            likes_id=request.POST.get("likes_id", None)
+            like_object=get_object_or_404(Like,pk=likes_id)
 
-    contents=Product.objects.all()
-    already_liked=[]
-    id=request.user.id
-    for content in contents:
-        if(content.likes.filter(id=id).exists()):
-            already_liked.append(content.id)
-    ctx={"contents":contents,"already_liked":already_liked }
-    return render(request,"blog/product_details.html",ctx)
+            if like_object.user.filter(id=request.user.id): #already liked the product
+                like_object.user.remove(request.user) #remove user from product 
+                liked=False
+            else:
+                #Add user like to product
+                like_object.user.add(request.user) 
+                liked=True
+            
+            #create new context to fee back to AJAX call
+            context={"likes_count":like_object.total_likes,
+                    "user_like"   :liked,
+                    "likes_id":likes_id
+                    }
+
+            return HttpResponse(json.dumps(context), content_type='application/json')
+
+
+    
+
+def compare_price(request):
+    return render(request, "products/Item.html")
+
