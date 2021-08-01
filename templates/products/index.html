@@ -62,12 +62,13 @@
 
     <div class="container">
         <div class="product-search">
-            <form class="card card-sm">
+            <form class="card card-sm" action="#">
             <div class="flex-search">
                 <h1>Best deal on <br>Price review</h1>
                 <p class="search-ptag">Get the best price deal on product you want <br> wherever you are.</p>
                 <label for="search-bar"></label>
-                <input type="search" id="search-bar" name="search-bar" placeholder="search for product">
+                <input type="search" id="search-bar" name="product_name" placeholder="search for product">
+                <img src="{% static 'images/Landing-images/search-icon.svg' %}" alt="search-icon" class="search-icon" type ="submit">
             </div>
         </form>
         </div>
@@ -166,8 +167,8 @@
                 <p class="product-ptag">Puma Caracal Unisex <br> Street Sneaker Black</p>
                 <div class="grey-text">Brand New. PUMA</div>
                 <div class="price-text">$650</div>
-                <!-- <button class="compare-price-btn"><a href= "https://www.amazon.com/Birkenstock-Unisex-Arizona-Essentials-Sandals/dp/B06XHPBW56/ref=sr_1_1?dchild=1&pd_rd_r=3eb19c7f-eb50-414b-b050-c3398338383b&pd_rd_w=PsNAN&pd_rd_wg=NFNRr&pf_rd_p=4144661d-07c2-44eb-8620-54d3031b2d54&pf_rd_r=C2BXGZX8M04WAM50TNWG&qid=1627607309&s=apparel&sr=1-1"></a>compare prices</button> -->
-                <a href="https://price-comparison-fe-2.netlify.app/item.html"><button class="oth-btn rbtn">compare prices</button></a>
+                <button class="compare-price-btn">compare prices</button>
+
             </div>
 
         </div>

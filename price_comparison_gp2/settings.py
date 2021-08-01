@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from faq.views import faq
 import os
 from pathlib import Path
-# import django_on_heroku
+import django_on_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -151,7 +151,7 @@ CRISPY_TEMPLATE_PACK="bootstrap4"
 
 # Activate Django-Heroku.
 
-# django_on_heroku.settings(locals())
+django_on_heroku.settings(locals())
 
 #SMTP Configuration
 

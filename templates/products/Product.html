@@ -44,7 +44,7 @@
         <div class="mobile-icons">
             <img src="{% static 'images/product-images/home-icon.svg' %}" alt="home-icon" class="home-icon" id="home-icon-position">
             <img src="{% static 'images/product-images/about-us.svg' %}" alt="about-icon" class="about-icon">
-             <img src="{% static 'images/product-images/faq-icon.svg' %}" alt="faq-icon" class="faq-icon" id="faq-icon-position">
+             <!-- <img src="{% static 'images/product-images/faq-icon.svg' %}" alt="faq-icon" class="faq-icon" id="faq-icon-position"> -->
             <img src="{% static 'images/product-images/contact-us.svg' %}" alt="contact-icon" class="contact-icon">
             <img src="{% static 'images/product-images/log-in.svg' %}" alt="login-icon" class="login-icon" id="login-icon-position">
         </div>
@@ -64,7 +64,7 @@
             <h1>{{product.name}}</h1>
             <!-- <h2>{{product.name}}</h2> -->
             <div class="product-images"><img src="{{product.image}}" alt="{{product.name}}"></div>
-            <p>{{product.name}}.
+            <p>{{product.description}}.
             </p>
         
            <div class="prices">
