@@ -57,3 +57,5 @@ def like_view(request):
 def compare_price(request):
     return render(request, "products/Item.html")
 
+def Modal(request):
+    return render(request, 'blog/Modal.html')
