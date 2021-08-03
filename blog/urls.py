@@ -7,6 +7,8 @@ urlpatterns = [
         path('details/<int:id>',details,name='product-detailsview'),
         path('like/',like_view, name='like_product'),
         path('compare_price/', compare_price, name='compare_price'),
+         #Summary Modal
+        path('modal', Modal, name="Modal"),
 
 
 
