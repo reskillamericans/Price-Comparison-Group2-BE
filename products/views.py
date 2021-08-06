@@ -36,7 +36,15 @@ def ebay(request):
 
 
 def product_detail(requests, id):
-    product = Products.objects.get(id=id)
+    product = Product.objects.get(id=id)
     # print(product)
     context = { 'product' : product}
-    return render(request, 'the+page.html', context)
+    return render(requests, 'products/Product.html', context)
+
+def product_comparison(requests, id):
+    product = Product.objects.get(id=id)
+    # print(product)
+    context = { 'product' : product
+
+    }
+    return render(requests, 'products/Item.html', context)

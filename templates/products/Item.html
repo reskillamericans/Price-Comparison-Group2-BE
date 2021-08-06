@@ -1,0 +1,144 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Price Comparison</title>
+        <link rel="shortcut icon" href="{% static 'images/login-images/favicon.ico' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'images/login-images/favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/Item.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/NavFont.css' %}">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Font Awesome -->
+    
+    <script
+      src="https://kit.fontawesome.com/a3c1e4db5c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'images/Model-images/brand&logo.svg' %}" alt="scalables-logo">
+        </div>
+        
+        <div class="navbar">
+            <ul>
+                <li><a href="{% url 'home' %}" class="home">Home</a></li>
+                <li><a href="#" class="about">About Us</a></li>
+                <li><a href="{% url 'faq' %}"class="faq">FAQ</a></li>
+                <li><a href="#" class="blog">Blog</a></li>
+                <li><a href="{% url 'accounts:contact' %}" class="contact">Contact Us</a></li>
+                <li><a href="{% url 'accounts:register' %}"  class="register">Register</a></li>
+                <li><a href="{% url 'accounts:login' %}"class="login">Login</a></li>
+            </ul>
+        </div>
+        <!-- <div class="register-login"> 
+            <ul>
+                <li><a href="Signup.html" class="login">Register</a></li>
+                <li><a href="Login.html" class="register">Login</a></li>
+             </ul>
+         </div> -->
+        
+    </header> 
+    
+
+
+    <nav>
+        <div class="topnav">
+            
+            <a href="{% url 'home' %}"><img src="{% static 'images/Model-images/brand&logo.svg' %}" alt="logo" class="logo"></a>
+
+            <div id="myLinks">
+                <a href="{% url 'home' %}"class="home">Home</a>
+                <a href="#" class="about">About Us</a>
+                <a href="{% url 'faq' %}" class="faq">FAQ</a>
+                <a href="#" class="blog">Blog</a>
+                <a href="{% url 'accounts:contact' %}"><class="contact">Contact Us</a>
+                <a href="{% url 'accounts:register' %}" ><class="register">Register</a>
+                <a href="{% url 'accounts:login' %}"><class="register">Login</a>
+
+            </div>
+              
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+             <i class="fa fa-bars"></i>
+            </a>
+
+        </div>
+        <div class="navbar-mobile">
+            <a href="">Popular</a> 
+            <a href="">Perfumes</a>
+            <a href="">Galaxy s20</a>
+            <a href="">Iphone</a>
+
+        </div>
+
+    </nav>
+
+
+    <section class="items">
+      <div class="amazon box">
+        <h1>{{ product.name }}</h1>
+        <h1>{{ product.description }}</h1>
+        <img src="{{ product.image_amazon }}" alt="{{ product.name }}" />
+        <h2 class="website">Amazon</h2>
+        <h3 class="price">${{ product.price_amazon }}</h3>
+       <div class="icons">
+          <div class="i-n-text">
+            <a href= "{% url 'blog.like_product' %}"><i class="far fa-thumbs-up like-icon g-a"></i></a>
+            <p>Like</p>
+          </div>
+          <div class="i-n-text">
+            <i class="far fa-comment-alt g-a"></i>
+            <p>Comment</p>
+          </div>
+          <div class="i-n-text">
+            <i class="fas fa-share-square g-a"></i>
+            <p>Share</p>
+          </div>
+        </div>
+      </div>
+      <div class="ebay box">
+        <h1>{{ product.name }}</h1>
+        <h1>{{ product.description }}</h1>
+        <img src="{{ product.image_ebay }}" alt="{{ product.name }}" />
+    
+        <h2 class="website">Ebay</h2>
+        <h3 class="price">${{product.price_ebay}}</h3>
+        <div class="icons">
+          <div class="i-n-text">
+           <a href= "{% url 'blog.like_product' %}"><i class="far fa-thumbs-up g-a"></i></a>
+            <p>Like</p>
+          </div>
+          <div class="i-n-text">
+            <i class="far fa-comment-alt g-a"></i>
+            <p>Comment</p>
+          </div>
+          <div class="i-n-text">
+            <i class="fas fa-share-square g-a"></i>
+            <p>Share</p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+    <script>
+        function myFunction() {
+          var x = document.getElementById("myLinks");
+          if (x.style.display === "block") {
+            x.style.display = "none";
+          } else {
+            x.style.display = "block";
+          }
+        }
+        </script>
+  </body>
+</html>
+
+
