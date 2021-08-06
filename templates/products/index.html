@@ -26,6 +26,7 @@
                 <li><a href="#" class="about">About Us</a></li>
                 <li><a href="{% url 'faq' %}" class="faq">FAQ</a></li>
                 <li><a href="#" class="blog">Blog</a></li>
+
                 <li><a href="{% url 'accounts:contact' %}" class="contact">Contact Us</a></li>
                 <li><a href="{% url 'accounts:register' %}" class="register">Register</a></li>
                 <li><a href="{% url 'accounts:login' %}" class="login">Login</a></li>
@@ -136,8 +137,7 @@
                 <p class="product-ptag">iphone 11    pro, <br> 124GB</p>
                 <div class="grey-text">Brand New. Iphone</div>
                 <div class="price-text">$650</div>
-                <a href="/{{ product.id }}" ><button class="compare-price-btn">compare prices</button></a>
-               
+                <a href="/{{ product.id }}" ><button class="compare-price-btn">compare prices</button></a
 
             </div>
 

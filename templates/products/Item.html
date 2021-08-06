@@ -1,4 +1,5 @@
 {% load static %} 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,10 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Price Comparison</title>
-        <link rel="shortcut icon" href="{% static 'images/login-images/favicon.ico' %}" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'images/login-images/favicon.ico' %}" type="image/x-icon">
     <link rel="icon" href="{% static 'images/login-images/favicon.ico' %}" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'css/Item.css' %}" />
     <link rel="stylesheet" href="{% static 'css/NavFont.css' %}">
+      
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,11 +27,13 @@
   <body>
     <header>
         <div class="logo">
+
             <img src="{% static 'images/Model-images/brand&logo.svg' %}" alt="scalables-logo">
         </div>
         
         <div class="navbar">
             <ul>
+
                 <li><a href="{% url 'home' %}" class="home">Home</a></li>
                 <li><a href="#" class="about">About Us</a></li>
                 <li><a href="{% url 'faq' %}"class="faq">FAQ</a></li>
@@ -52,7 +56,6 @@
 
     <nav>
         <div class="topnav">
-            
             <a href="{% url 'home' %}"><img src="{% static 'images/Model-images/brand&logo.svg' %}" alt="logo" class="logo"></a>
 
             <div id="myLinks">
@@ -61,7 +64,7 @@
                 <a href="{% url 'faq' %}" class="faq">FAQ</a>
                 <a href="#" class="blog">Blog</a>
                 <a href="{% url 'accounts:contact' %}"><class="contact">Contact Us</a>
-                <a href="{% url 'accounts:register' %}" ><class="register">Register</a>
+                <a href="{% url 'accounts:register' %}" ><class="login">Register</a>
                 <a href="{% url 'accounts:login' %}"><class="register">Login</a>
 
             </div>
@@ -80,7 +83,6 @@
         </div>
 
     </nav>
-
 
     <section class="items">
       <div class="amazon box">
@@ -140,5 +142,4 @@
         </script>
   </body>
 </html>
-
 

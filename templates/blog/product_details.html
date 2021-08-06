@@ -43,7 +43,6 @@ $('.like_icon').click(function(){
              dataType: "json",
              success: function(response) {
               selector = document.getElementById(response.likes_id);
-              document.getElementById('test').innerHTML = response.likes_count + " | " + response.likes_id + " | " + response.user_like
                     if(response.user_like==true){
                       $(selector).css("color","blue");
                     }
@@ -57,4 +56,3 @@ $('.like_icon').click(function(){
 
   })
 </script>
-    

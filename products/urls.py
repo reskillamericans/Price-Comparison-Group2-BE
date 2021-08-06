@@ -8,4 +8,5 @@ urlpatterns = [
     path('ebay', views.ebay, name='ebay'),
     path('<int:id>/', views.product_detail, name=""),
     path('product_comparison/<int:id>/',views.product_comparison,name="product_comparison")
+
 ]
