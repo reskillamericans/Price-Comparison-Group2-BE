@@ -1,11 +1,13 @@
 from django.urls import path
 from .import views 
-#from .views import index, ebayindex
+from blog.views import like_view
+app_name='products'
 
 urlpatterns = [
 
     path('amazon', views.amazon, name='amazon'),
     path('ebay', views.ebay, name='ebay'),
-    path('<int:id>/', views.product_detail, name=""),
-    path('product_comparison/<int:id>/',views.product_comparison,name="product_comparison")
+    path('<int:id>/', views.product_detail, name="product_detail"),
+    path('product_comparison/<int:id>/',views.product_comparison,name="product_comparison"),
+    path('like/',like_view, name='like_product'),
 ]

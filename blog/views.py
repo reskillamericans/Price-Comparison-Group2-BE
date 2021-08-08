@@ -49,7 +49,7 @@ def like_view(request):
             
             #create new context to fee back to AJAX call
             context={"likes_count":like_object.total_likes,
-                        "user_like"   :liked,
+                        "user_like"  :liked,
                         "likes_id":likes_id
                     }
             print(like_object.total_likes)

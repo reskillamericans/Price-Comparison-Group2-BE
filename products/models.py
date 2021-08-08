@@ -5,13 +5,14 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Product(models.Model):
-    name = models.CharField(max_length = 200)
-    description = models.TextField()
+    name = models.CharField(max_length = 200, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    image=models.URLField(blank=True,null=True)
     price_amazon = models.DecimalField(max_digits=10, decimal_places=2, default=True, blank=True)
     price_ebay = models.DecimalField(max_digits=10, decimal_places=2,default=True, blank=True)
-    condition = models.CharField(max_length=25)  #New or Used
-    image_amazon= models.CharField(max_length=300, default='')
-    image_ebay= models.CharField(max_length=300, default='')
+    condition = models.CharField(max_length=25)  #New or Refurbished
+    amazon_url= models.URLField(blank=True,null=True, default='None')
+    ebay_url= models.URLField(blank=True,null=True, default='None')
     slug = models.SlugField(max_length=255)
     class Meta:
         verbose_name_plural = 'Products'

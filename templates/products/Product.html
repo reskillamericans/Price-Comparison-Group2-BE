@@ -57,33 +57,32 @@
         </div>
     </nav>
     
-    <div class="container">
-        
-       <div class="main">
-            <h1>{{product.name}}</h1>
-            <!-- <h2>{{product.name}}</h2> -->
-            <div class="product-images"><img src="{{ product.image }}" alt="{{ product.name }}"></div>
-            <p>{{ product.description }}.
-            </p>
-        
-           <div class="prices">
-            <div class="left">
-            <ul>
-                <li class="bold amazon">Amazon</li>
+        <div class="container">
             
-                <li class="price-a">${{ product.price_amazon}}</li>
-            </ul> 
-            <button class="btn1">Buy Now</button>
-            </div>
+        <div class="main">
+                <h1>{{product.name}}</h1>
+                <!-- <h2>{{product.name}}</h2> -->
+                <div class="product-images"><img src="{{ product.image }}" alt="{{ product.name }}"></div>
+                <p>{{ product.description }}.
+                </p>
+            
+            <div class="prices">
+                <div class="left">
+                 <ul>
+                    <li class="bold amazon">Amazon</li>
+                    <li class="price-a">${{ product.price_amazon}}</li>
+                 </ul> 
+                <button class="btn1">Buy Now</button>
+                </div>
 
-           <div class="right">
-            <ul>
-                <li class="bold ebay">ebay</li>
-                <li class="price-e">${{ product.price_ebay}}</li>
-            </ul>
-                <button class="btn2">Buy Now</button>
-            </div>
-            </div>
+                <div class="right">
+                    <ul>
+                        <li class="bold ebay">ebay</li>
+                        <li class="price-e">${{ product.price_ebay}}</li>
+                    </ul>
+                </div>!-->
+                <a href="{% url 'products:product_comparison' product.id %}"> <button class="btn2">compare prices</button></a>
+                </div>
 
         </div>
     

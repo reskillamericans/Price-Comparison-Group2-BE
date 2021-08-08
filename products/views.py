@@ -4,7 +4,9 @@ from django.http import JsonResponse
 from .models import Product
 
 def home(request):
-    return render(request, "products/index.html")
+    products= Product.objects.all()
+    context={ 'products' : products }
+    return render(request, "products/index.html", context)
 
 def amazon(request):
     url = "https://amazon-products1.p.rapidapi.com/product"
@@ -40,6 +42,8 @@ def product_detail(requests, id):
     # print(product)
     context = { 'product' : product}
     return render(requests, 'products/Product.html', context)
+
+
 
 def product_comparison(requests, id):
     product = Product.objects.get(id=id)
