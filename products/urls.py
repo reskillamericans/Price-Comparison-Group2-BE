@@ -8,6 +8,7 @@ urlpatterns = [
     path('amazon', views.amazon, name='amazon'),
     path('ebay', views.ebay, name='ebay'),
     path('<int:id>/', views.product_detail, name="product_detail"),
-    path('product_comparison/<int:id>/',views.product_comparison,name="product_comparison"),
-    path('like/',like_view, name='like_product'),
+    path('product_comparison/<int:id>/',views.product_comparison,name="product_comparison")
+
+
 ]

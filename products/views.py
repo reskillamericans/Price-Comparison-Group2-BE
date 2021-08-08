@@ -3,10 +3,16 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from .models import Product
 
-def home(request):
-    products= Product.objects.all()
-    context={ 'products' : products }
-    return render(request, "products/index.html", context)
+
+def home(requests):
+    product = Product.objects.all()
+
+    #Search item
+    product_name = requests.GET.get('product_name')
+    if product_name !='' and product_name is not None:
+        product = product.filter(name__icontains=product_name)
+    return render(requests, "products/index.html")
+
 
 def amazon(request):
     url = "https://amazon-products1.p.rapidapi.com/product"
@@ -36,7 +42,6 @@ def ebay(request):
     return JsonResponse(response.json(), safe=False)
 
 
-
 def product_detail(requests, id):
     product = Product.objects.get(id=id)
     # print(product)
@@ -48,7 +53,7 @@ def product_detail(requests, id):
 def product_comparison(requests, id):
     product = Product.objects.get(id=id)
     # print(product)
-    context = { 'product' : product
-
-    }
+    context = { 'product' : product}
     return render(requests, 'products/Item.html', context)
+
+

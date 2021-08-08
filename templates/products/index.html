@@ -26,6 +26,7 @@
                 <li><a href="#" class="about">About Us</a></li>
                 <li><a href="{% url 'faq' %}" class="faq">FAQ</a></li>
                 <li><a href="#" class="blog">Blog</a></li>
+
                 <li><a href="{% url 'accounts:contact' %}" class="contact">Contact Us</a></li>
                 <li><a href="{% url 'accounts:register' %}" class="register">Register</a></li>
                 <li><a href="{% url 'accounts:login' %}" class="login">Login</a></li>
@@ -85,7 +86,7 @@
         <a href="{% url 'products:product_detail' product.id %}">
         <!-- <a href="{% url 'products:product_comparison' product.id %}"> -->
             <div class="chanel-product">
-                <div class="chanel-img">
+                <div class="chanel-img"></div>
                     <!-- <img src="{% static 'images/Landing-images/chanel-product.svg' %}" alt="chanel" class="chanel" width="150px"> -->
                     <p><img src= {{ product.image }}  alt="chanel" class="chanel" width="150px"></p>
                 </div>
@@ -97,6 +98,7 @@
                     <a href="{% url 'products:product_comparison' product.id %}"><button class="compare-price-btn">compare prices</button></a>
         
                 </div>
+
             </div>
         </a>
             
