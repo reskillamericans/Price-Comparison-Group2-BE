@@ -80,31 +80,38 @@
 
     <section class="items">
        
-        
       <div class="amazon box">
         <h1> Amazon</h1>
         <h1>{{ product.name }}</h1>
-        <h1>{{ product.description }}</h1>
+        <h3>{{ product.description }}</h3>
         <img src="{{ product.image }}" alt="{{ product.name }}">
         <a href="{{ product.amazon_url }}"><h2 class="website">View Amazon Website</h2></a>
         <h3 class="price">Price: ${{ product.price_amazon }}</h3>
+            {% if likes_list %}
+                {% for likes in likes_list %}
+                  <div id="likes_count"> {{ likes.total_likes }} Likes </div>
+                  <div style="text-align: left; margin-top:auto;">
+                      {% if user.is_authenticated %}
+                            <a style="color:{% if user_like %} blue {% else %} black {% endif %};" 
+                            class="like_icon" id="{{ likes.id }}">
+                            <i class="far fa-thumbs-up like-icon g-a"></i>
+                          </a>
+                  
+                          
+                      {% else %}
+                          <p> Please login to like the product!</p>
+                      {% endif %}
+
+                  </div>
+                {% endfor  %}
+            {% endif  %}
+
         <div class="icons">
-                <div class="i-n-text">
-                    {% if user.is_authenticated %}
-                          <a style="color:{% if user_like %} blue {% else %} black {% endif %};" 
-                          class="like_icon" id="{{ likes.id }}"><i class="far fa-thumbs-up like-icon g-a"></i>
-                        </a><p>{{ likes.total_likes }}Like</p>
-                        
-                        <p id="test"></p>
-                    {% else %}
-                        <p> Please login to like the product!</p>
-                    {% endif %}
-                    
- 
-                    
-                    
-                </div>   
-           
+          <div class="i-n-text">
+            <i class="far fa-thumbs-up like-icon g-a"></i>
+            <p>Like</p>
+          </div>
+            
           <div class="i-n-text">
             <i class="far fa-comment-alt g-a"></i>
             <p>Comment</p>
@@ -121,24 +128,35 @@
       <div class="ebay box">
         <h1> ebay </h1>
         <h1>{{ product.name }}</h1>
-        <h1>{{ product.description }}</h1>
+        <h3>{{ product.description }}</h3>
         <img src="{{ product.image }}" alt="{{ product.name }}">
     
         <a href="{{ product.ebay_url }}"><h2 class="website"> View Ebay Website</h2></a>
         <h3 class="price">Price: ${{ product.price_ebay }}</h3>
+        {% if likes_list %}
+        {% for likes in likes_list %}
+          <div id="likes_count"> {{ likes.total_likes }} Likes </div>
+          <div style="text-align: left; margin-top:auto;">
+              {% if user.is_authenticated %}
+                    <a style="color:{% if user_like %} blue {% else %} black {% endif %};" 
+                    class="like_icon" id="{{ likes.id }}">
+                    <i class="far fa-thumbs-up like-icon g-a"></i>
+                  </a>
+          
+                  
+              {% else %}
+                  <p> Please login to like the product!</p>
+              {% endif %}
+
+          </div>    
+          {% endfor  %}
+      {% endif  %}
+
+
         <div class="icons">
             <div class="i-n-text">
-                {% if user.is_authenticated %}
-                <a style="color:{% if user_like %} green {% else %} black {% endif %};" 
-                class="like_icon" id="{{ likes.id }}">
-                <i class="far fa-thumbs-up like-icon g-a" aria-hidden="true"></i>   
-                </a><div id="likes_count"> {{ likes.total_likes }} Likes </div><p>{{ likes.total_likes }}Like</p>
-                <p id="test"></p>
-                {% else %}
-                <p> Please login to like the product!</p>
-                {% endif %}
-                
-            
+              <i class="far fa-thumbs-up like-icon g-a"></i>
+              <p>Like</p>
             </div>
           <div class="i-n-text">
             <i class="far fa-comment-alt g-a"></i>
@@ -153,9 +171,12 @@
       </div>
     </section>
 
+  </body>
+</html>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
     <script>
     // AJAX CALL
     $('.like_icon').click(function(){
@@ -180,9 +201,9 @@
             });
 
     })
-    </script>  
+</script>  
     
-    <script>
+<script>
 
 
         function myFunction() {
@@ -193,7 +214,6 @@
             x.style.display = "block";
           }
         }
-        </script>
-  </body>
-</html>
+</script>
+  
 

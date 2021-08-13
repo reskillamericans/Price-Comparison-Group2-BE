@@ -2,10 +2,19 @@ import requests
 from django.shortcuts import render
 from django.http import JsonResponse
 from .models import Product
+from blog.models import Like
 
 
 def home(requests):
-    product = Product.objects.all()
+    #product = Product.objects.all()
+    product= Product.objects.all()
+    context={
+          'products' : product
+        
+      }
+    return render(requests, "products/index.html", context)
+
+    
 
     #Search item
     product_name = requests.GET.get('product_name')
@@ -44,16 +53,39 @@ def ebay(request):
 
 def product_detail(requests, id):
     product = Product.objects.get(id=id)
-    # print(product)
-    context = { 'product' : product}
+    user=requests.user
+    likes_list =Like.objects.filter(product_id=id)
+    if user.is_authenticated:
+        user_like=Like.objects.filter( user=requests.user, product_id=id)
+    else:
+        user_like=False
+
+    context={
+        'product':product,
+        'user':user,
+        'likes_list': likes_list,
+        'user_like': user_like
+    }
     return render(requests, 'products/Product.html', context)
 
 
 
 def product_comparison(requests, id):
     product = Product.objects.get(id=id)
+    user=requests.user
+    likes_list =Like.objects.filter(product_id=id)
+    if user.is_authenticated:
+        user_like=Like.objects.filter( user=requests.user, product_id=id)
+    else:
+        user_like=False
+
+    context={
+        'product':product,
+        'user':user,
+        'likes_list': likes_list,
+        'user_like': user_like
+    }
     # print(product)
-    context = { 'product' : product}
     return render(requests, 'products/Item.html', context)
 
 
