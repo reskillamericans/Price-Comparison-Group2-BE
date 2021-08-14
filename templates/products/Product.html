@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    
 
-    <title>Home Page</title>
+    <title>Product Page</title>
 </head>
 
 <body>
@@ -46,7 +46,7 @@
             <div class="mobile-icons">
                 <img src="{% static 'images/product-images/home-icon.svg' %}" alt="home-icon" class="home-icon" id="home-icon-position">
                 <img src="{% static 'images/product-images/about-us.svg' %}" alt="about-icon" class="about-icon">
-                <!-- <img src="{% static 'images/product-images/faq-icon.svg' %}" alt="faq-icon" class="faq-icon" id="faq-icon-position"> -->
+                <img src="{% static 'images/product-images/faq-icon.svg' %}" alt="faq-icon" class="faq-icon" id="faq-icon-position">
                 <img src="{% static 'images/product-images/contact-us.svg' %}" alt="contact-icon" class="contact-icon">
                 <img src="{% static 'images/product-images/log-in.svg' %}" alt="login-icon" class="login-icon" id="login-icon-position">
             </div>
@@ -64,11 +64,12 @@
             <div class="main">
                 
                 <h1>{{ product.name }}</h1>
-                <p>{{ product.description }}</p>
+                <h2>{{ product.description }}</h2> 
+                
                 
                     <div class="product-images">
-                        <img src="{{ product.image }}" alt="{{ product.name }}" width="250px" height="250px">
-
+                        <img src="{{ product.image }}" alt="{{ product.name }}" width="250px" height="250px"></div>
+                        <p>{{ product.details }}</p>
                         {% if likes_list %}
                         {% for likes in likes_list %}
                         <div id="likes_count"> {{ likes.total_likes }} Likes </div>
@@ -88,46 +89,38 @@
 
                                    
                         </div>
-                        
-                       
-                        
-                    </div>
+   
+                    
+                    
                 {% endfor  %}
-                {% endif  %}     
-                      
-            </div> 
-           
-
-            <div class="prices">
-                        
-                    <div class="left">
-                     <ul>
-                        <li class="bold amazon">Amazon</li>
-                        <!-- <li class="price-a">${{ product.price_amazon}}</li> -->
-                        <button class="btn1">Buy Now</button>
-                     </ul> 
-                     
-                    </div>
-
-                    <div class="right">
-                        <ul>
-                            <li class="bold ebay">ebay</li>
-                            <!-- <li class="price-e">${{ product.price_ebay}}</li> -->
-                        </ul>
-                        <button class="btn1">Buy Now</button>
-                    </div>
-                    <br/>
-                    <br/>
-                    <a href="{% url 'products:product_comparison' product.id %}"> 
-                        <button class="compare-price-btn">compare prices</button></a>
-                       
-
-
-
+                {% endif  %} 
+                    
+            
+                <div class="prices">
+                <div class="left"> 
+                 <ul>
+                    <li class="bold amazon">Amazon</li>
+                    <li class="price-a">${{ product.price_amazon}}</li> 
+                    <a href="{{ product.amazon_url }}"><button class="btn1">Buy Now</button></a>
+                 </ul> 
+                </div>
+    
+                <div class="right">
+                    <ul>
+                        <li class="bold ebay">ebay</li>
+                        <li class="price-e">${{ product.price_ebay}}</li>
+                    </ul>
+                    <a href="{{ product.ebay_url }}"><button class="btn1">Buy Now</button></a>
+                </div>
+                </div> 
+                <br/>
+                <br/>
+                <a href="{% url 'products:product_comparison' product.id %}"> 
+                    <button class="compare-price-btn">compare prices</button></a>
+                   
             </div>      
-                
         </div>     
-       
+        
             
     </div>
          

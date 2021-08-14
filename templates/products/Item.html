@@ -87,45 +87,39 @@
         <img src="{{ product.image }}" alt="{{ product.name }}">
         <a href="{{ product.amazon_url }}"><h2 class="website">View Amazon Website</h2></a>
         <h3 class="price">Price: ${{ product.price_amazon }}</h3>
-            {% if likes_list %}
-                {% for likes in likes_list %}
-                  <div id="likes_count"> {{ likes.total_likes }} Likes </div>
-                  <div style="text-align: left; margin-top:auto;">
-                      {% if user.is_authenticated %}
-                            <a style="color:{% if user_like %} blue {% else %} black {% endif %};" 
-                            class="like_icon" id="{{ likes.id }}">
-                            <i class="far fa-thumbs-up like-icon g-a"></i>
-                          </a>
-                  
-                          
-                      {% else %}
-                          <p> Please login to like the product!</p>
-                      {% endif %}
-
-                  </div>
-                {% endfor  %}
-            {% endif  %}
-
+         
         <div class="icons">
           <div class="i-n-text">
-            <i class="far fa-thumbs-up like-icon g-a"></i>
-            <p>Like</p>
+            {% if likes_list %}
+            {% for likes in likes_list %}
+      
+             <div style="text-align: left; margin-top:auto;">
+              {% if user.is_authenticated %}  
+                <a style= "font-size:30px; color:{% if user_like %}yellow {% else %} black {% endif %};" 
+                class="like_icon" id="{{ likes.id }}">
+                <i class="fa fa-thumbs-up like-icon " aria-hidden="true"></i>
+                </a>
+              {% else %}
+                  <p> Please login to like the product!</p>
+                {% endif %}  
+              <div id="likes_count">{{ likes.total_likes }} Likes  </div>    
+        </div>
+        {% endfor  %}
+        {% endif  %}   
           </div>
             
-          <div class="i-n-text">
-            <i class="far fa-comment-alt g-a"></i>
+          <div class="i-n-text"> 
+    
+            <a style= "font-size:30px;"> <i class="far fa-comment-alt g-a"></i></a>
             <p>Comment</p>
           </div>
-          <div class="i-n-text">
-            <i class="fas fa-share-square g-a"></i>
-            <p>Share</p>
-          </div>
-        </div>
+          
+      </div>
         
 
-      </div>
+    </div>
 
-      <div class="ebay box">
+    <div class="ebay box">
         <h1> ebay </h1>
         <h1>{{ product.name }}</h1>
         <h3>{{ product.description }}</h3>
@@ -133,76 +127,73 @@
     
         <a href="{{ product.ebay_url }}"><h2 class="website"> View Ebay Website</h2></a>
         <h3 class="price">Price: ${{ product.price_ebay }}</h3>
-        {% if likes_list %}
-        {% for likes in likes_list %}
-          <div id="likes_count"> {{ likes.total_likes }} Likes </div>
-          <div style="text-align: left; margin-top:auto;">
-              {% if user.is_authenticated %}
-                    <a style="color:{% if user_like %} blue {% else %} black {% endif %};" 
-                    class="like_icon" id="{{ likes.id }}">
-                    <i class="far fa-thumbs-up like-icon g-a"></i>
-                  </a>
-          
-                  
-              {% else %}
-                  <p> Please login to like the product!</p>
-              {% endif %}
-
-          </div>    
-          {% endfor  %}
-      {% endif  %}
-
+            
 
         <div class="icons">
             <div class="i-n-text">
-              <i class="far fa-thumbs-up like-icon g-a"></i>
-              <p>Like</p>
+
+              {% if likes_list %}
+            {% for likes in likes_list %}
+          <div style="text-align: left; margin-top:auto;">
+                    {% if user.is_authenticated %}
+                    
+                    <a style= "font-size:30px; color:{% if user_like %} yellow {% else %} black {% endif %};" 
+                    class="like_icon" id="{{ likes.id }}">
+                    <i class="fa fa-thumbs-up like-icon " aria-hidden="true"></i>
+                    </a>
+                
+                    {% else %}
+                    <p> Please login to like the product!</p>
+                    {% endif %} 
+                    <div id="likes_count"> {{ likes.total_likes }} Likes </div>         
             </div>
+        
+        {% endfor  %}
+        {% endif  %} 
+            </div>
+
           <div class="i-n-text">
-            <i class="far fa-comment-alt g-a"></i>
+            <a style= "font-size:30px;"> <i class="far fa-comment-alt g-a"></i></a>
             <p>Comment</p>
           </div>
-          <div class="i-n-text">
-            <i class="fas fa-share-square g-a"></i>
-            <p>Share</p>
-          </div>
-        </div>
+
+          
+
         </div>
       </div>
+    
     </section>
 
   </body>
 </html>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+// AJAX CALL
+$('.like_icon').click(function(){
+    $.ajax({
+             type: "POST",
+             url: "{% url 'blog:like_product' %}",
+             data: {'likes_id': $(this).attr('id'),
+                    'operation':'like_submit',
+                    'csrfmiddlewaretoken': '{{ csrf_token }}'
+            },
+             dataType: "json",
+             success: function(response) {
+              selector = document.getElementById(response.likes_id);
+              if(response.user_like==true){
+                    $(selector).css("color","yellow");}
+              else if(response.user_like==false){
+                    $(selector).css("color","black");}
+              document.getElementById('likes_count').innerHTML="Likes: " + response.likes_count;
+          }
 
+        });
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
-    <script>
-    // AJAX CALL
-    $('.like_icon').click(function(){
-        $.ajax({
-                type: "POST",
-                url: "{% url 'blog:like_product' %}",
-                data: {'likes_id': $(this).attr('id'),
-                        'operation':'like_submit',
-                        'csrfmiddlewaretoken': '{{ csrf_token }}'
-                },
-                dataType: "json",
-                success: function(response) {
-                selector = document.getElementById(response.likes_id);
-                document.getElementById('test').innerHTML = response.likes_count + " | " + response.likes_id + " | " + response.user_like
-                if(response.user_like==true){
-                      $(selector).css("color","green");}
-                else if(response.user_like==false){
-                      $(selector).css("color","black");}
-                document.getElementById('likes_count').innerHTML="Likes: " + response.likes_count;
-                }
-
-            });
-
-    })
-</script>  
+  })
+</script>
     
+
 <script>
 
 
