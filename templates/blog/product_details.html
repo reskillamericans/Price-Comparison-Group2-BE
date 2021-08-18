@@ -7,18 +7,18 @@
    
 {{ product.description }}
 <br/><br/>
-    
-   <div> {{likes.total_likes}} Likes </div>
+ 
+   <div id="likes_count"> {{ likes.total_likes }} Likes </div>
    <div style="text-align: left; margin-top:auto;">
     {% if user.is_authenticated %}
-    <a name="{{ product.id }}"
-     style="font-size:25px;color:{% if user_like %} blue {% else %} black {% endif %};" 
-     class="like_icon" >
-     <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-    </a>
-
+      <a 
+      style="font-size:25px;color:{% if user_like %} blue {% else %} black {% endif %};" 
+      class="like_icon" id="{{ likes.id }}">
+      <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+      </a>
+      <p id="test"></p>
     {% else %}
-    <p> Login to like  the product!</p>
+      <p> Please login to like the product!</p>
     {% endif %}
   </div>
 
@@ -26,6 +26,8 @@
     
     <br/><br/><br/>
     <a href="{% url 'homeview' %}">Back</a>
+{% endfor  %}
+{% endif  %}
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
@@ -40,7 +42,7 @@ $('.like_icon').click(function(){
             },
              dataType: "json",
              success: function(response) {
-              selector = document.getElementsByName(response.likes_id);
+              selector = document.getElementById(response.likes_id);
                     if(response.user_like==true){
                       $(selector).css("color","blue");
                     }
@@ -54,5 +56,3 @@ $('.like_icon').click(function(){
 
   })
 </script>
-{% endfor  %}
-{% endif  %}    

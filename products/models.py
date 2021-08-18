@@ -1,19 +1,23 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django.core.validators import FileExtensionValidator
 
 
 # Create your models here.
 class Product(models.Model):
-    name = models.CharField(max_length = 200)
-    description = models.TextField()
-    # price = models.DecimalField(max_digits=4, decimal_places=2)
-    price_amazon = models.DecimalField(max_digits=4, decimal_places=2)
-    price_ebay = models.DecimalField(max_digits=4, decimal_places=2)
-    condition = models.CharField(max_length=25)  #New or Used
-    image = models.CharField(max_length=300, default='')
-    # image = models.ImageField(upload_to='images/product-images')
+    name = models.CharField(max_length = 200, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    details=models.TextField(blank=True,null=True)
+    #image=models.FileField(upload_to ="static/images/Landing-images/%Y/%m/",validators=[FileExtensionValidator(['pdf','svg'])],blank=True,null=True)
+    image=models.URLField(default=None, blank=True, null=True)
+    price_amazon = models.DecimalField(max_digits=10, decimal_places=2, default=True, blank=True)
+    price_ebay = models.DecimalField(max_digits=10, decimal_places=2,default=True, blank=True)
+    condition = models.CharField(max_length=25)  #New or Refurbished
+    amazon_url= models.URLField(blank=True,null=True, default='None')
+    ebay_url= models.URLField(blank=True,null=True, default='None')
     slug = models.SlugField(max_length=255)
+
     class Meta:
         verbose_name_plural = 'Products'
         

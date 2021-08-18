@@ -1,110 +1,130 @@
-{% load static %}
-
-<!-- {% block content %} -->
 <!DOCTYPE html>
 <html lang="en">
+    {% load static %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'Product.css' %}">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"> 
-    <title>Product</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/product-images/Logo.png">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+
+    <title>Product Page</title>
 </head>
+
 <body>
     <div class="wrapper">
-    <header>
-        <div class="logo">
-            <img src="{% static 'images/product-images/brand&logo.png' %}" alt="scalables-logo">
-        </div>
-        
-        <div class="navbar">
-            <ul>
-                <li><a href="{% url 'home' %}" class="home">Home</a></li>
-                <li><a href="#" class="about">About Us</a></li>
-                <li><a href="{% url 'faq' %}" class="faq">FAQ</a></li>
-                <li><a href="#" class="blog">Blog</a></li>
-                <li><a href="Contact.html" class="contact">Contact Us</a></li>
-                <li><a href="{% url 'accounts:register' %}" class="register">Register</a></li>
-                <li><a href="{% url 'accounts:login' %}" class="login">Login</a></li>
-            </ul>
-        </div>
-        <!-- <div class="register-login">
-            <ul>
-                <li><a href="Signup.html" class="register">Register</a></li>
-                <li><a href="Login.html" class="login">Login</a></li>
-            </ul>
-        </div> -->
-        
-    </header>
-
-    <nav>
-        <div class="mobile-icons">
-            <img src="{% static 'images/product-images/home-icon.svg' %}" alt="home-icon" class="home-icon" id="home-icon-position">
-            <img src="{% static 'images/product-images/about-us.svg' %}" alt="about-icon" class="about-icon">
-             <!-- <img src="{% static 'images/product-images/faq-icon.svg' %}" alt="faq-icon" class="faq-icon" id="faq-icon-position"> -->
-            <img src="{% static 'images/product-images/contact-us.svg' %}" alt="contact-icon" class="contact-icon">
-            <img src="{% static 'images/product-images/log-in.svg' %}" alt="login-icon" class="login-icon" id="login-icon-position">
-        </div>
-        <div class="mobile-text">
-            <div id="home-text" class="home-icon-text">Home</div>
-            <div id="about-text" class="about-icon-text">About Us</div>
-            <div id="faq-text" class="faq-icon-text">FAQ</div>
-            <div id="contact-text" class="contact-icon-text">Contact Us</div>
-            <div id="login-text" class="login-icon-text">Log In</div>
-
-        </div>
-    </nav>
-    
-    <div class="container">
-        
-       <div class="main">
-            <h1>{{product.name}}</h1>
-            <!-- <h2>{{product.name}}</h2> -->
-            <div class="product-images"><img src="{{product.image}}" alt="{{product.name}}"></div>
-            <p>{{product.description}}.
-            </p>
-        
-           <div class="prices">
-            <div class="left">
-            <ul>
-                <li class="bold amazon">Amazon</li>
+        <header>
+            <div class="logo">
+                <img src="{% static 'images/product-images/brand&logo.png' %}" alt="scalables-logo">
+            </div>
             
-                <li class="price-a">${{ product.price_amazon}}</li>
-            </ul> 
-            <button class="btn1">Buy Now</button>
+            <div class="navbar">
+                <ul>
+                    <li><a href="{% url 'home' %}" class="home">Home</a></li>
+                    <li><a href="#" class="about">About Us</a></li>
+                    <li><a href="{% url 'faq' %}" class="faq">FAQ</a></li>
+                    <li><a href="#" class="blog">Blog</a></li>
+                    <li><a href="Contact.html" class="contact">Contact Us</a></li>
+                    <li><a href="{% url 'accounts:register' %}" class="register">Register</a></li>
+                    <li><a href="{% url 'accounts:login' %}" class="login">Login</a></li>
+                </ul>
             </div>
+            <!-- <div class="register-login">
+                <ul>
+                    <li><a href="Signup.html" class="register">Register</a></li>
+                    <li><a href="Login.html" class="login">Login</a></li>
+                </ul>
+            </div> -->
+            
+        </header>
 
-           <div class="right">
-            <ul>
-                <li class="bold ebay">ebay</li>
-                <li class="price-e">${{ product.price_ebay}}</li>
-            </ul>
-                <button class="btn2">Buy Now</button>
+        <nav>
+            <div class="mobile-icons">
+                <img src="{% static 'images/product-images/home-icon.svg' %}" alt="home-icon" class="home-icon" id="home-icon-position">
+                <img src="{% static 'images/product-images/about-us.svg' %}" alt="about-icon" class="about-icon">
+                <img src="{% static 'images/product-images/faq-icon.svg' %}" alt="faq-icon" class="faq-icon" id="faq-icon-position">
+                <img src="{% static 'images/product-images/contact-us.svg' %}" alt="contact-icon" class="contact-icon">
+                <img src="{% static 'images/product-images/log-in.svg' %}" alt="login-icon" class="login-icon" id="login-icon-position">
             </div>
-            </div>
+            <div class="mobile-text">
+                <div id="home-text" class="home-icon-text">Home</div>
+                <div id="about-text" class="about-icon-text">About Us</div>
+                <div id="faq-text" class="faq-icon-text">FAQ</div>
+                <div id="contact-text" class="contact-icon-text">Contact Us</div>
+                <div id="login-text" class="login-icon-text">Log In</div>
 
-        </div>
+            </div>
+        </nav>
+        
+        <div class="container">
+            <div class="main">
+                
+                <h1>{{ product.name }}</h1>
+                <h2>{{ product.description }}</h2> 
+                
+                
+                    <div class="product-images">
+                        <img src="{{ product.image }}" alt="{{ product.name }}" width="250px" height="250px"></div>
+                        <p>{{ product.details }}</p>
+                        {% if likes_list %}
+                        {% for likes in likes_list %}
+                        <div id="likes_count"> {{ likes.total_likes }} Likes </div>
+                       
+                        
+                        <div style="text-align: left; margin-top:auto;">
+                                    {% if user.is_authenticated %}
+                                    
+                                    <a style= "font-size:50px; color:{% if user_like %} green {% else %} black {% endif %};" 
+                                    class="like_icon" id="{{ likes.id }}">
+                                    <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                    </a>
+                                
+                                    {% else %}
+                                    <p> Please login to like the product!</p>
+                                    {% endif %}
+
+                                   
+                        </div>
+   
+                    
+                    
+                {% endfor  %}
+                {% endif  %} 
+                    
+            
+                <div class="prices">
+                <div class="left"> 
+                 <ul>
+                    <li class="bold amazon">Amazon</li>
+                    <li class="price-a">${{ product.price_amazon}}</li> 
+                    <a href="{{ product.amazon_url }}"><button class="btn1">Buy Now</button></a>
+                 </ul> 
+                </div>
     
-
-        <div class="social-icons">
-            <div class="icons">
-                <img src="{% static 'images/product-images/like-icon.svg' %}" alt="thumbs-up-icon" class="like-icon">
-                <img src="{% static 'images/product-images/comment-icon.svg' %}" alt="message-square-icon" class="comment-icon">
-                <img src="{% static 'images/product-images/share-icon.svg' %}" alt="share-icon" class="share-icon">
-            </div>
-            <div class="icons-text">
-                <div class="like">Like</div>
-                <div class="comment">Comment</div>
-                <div class="share">Share</div>
-            </div>
-
-        </div>
-
-        </div>
+                <div class="right">
+                    <ul>
+                        <li class="bold ebay">ebay</li>
+                        <li class="price-e">${{ product.price_ebay}}</li>
+                    </ul>
+                    <a href="{{ product.ebay_url }}"><button class="btn1">Buy Now</button></a>
+                </div>
+                </div> 
+                <br/>
+                <br/>
+                <a href="{% url 'products:product_comparison' product.id %}"> 
+                    <button class="compare-price-btn">compare prices</button></a>
+                   
+            </div>      
+        </div>     
+        
+            
     </div>
+         
+
 
     <svg id="svg">
         <defs>
@@ -120,6 +140,34 @@
         </defs>
       </svg>
       
-</body>
+    </body>
 </html>
-<!-- {% endblock %} -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+// AJAX CALL
+$('.like_icon').click(function(){
+    $.ajax({
+             type: "POST",
+             url: "{% url 'blog:like_product' %}",
+             data: {'likes_id': $(this).attr('id'),
+                    'operation':'like_submit',
+                    'csrfmiddlewaretoken': '{{ csrf_token }}'
+            },
+             dataType: "json",
+             success: function(response) {
+              selector = document.getElementById(response.likes_id);
+              if(response.user_like==true){
+                    $(selector).css("color","green");}
+              else if(response.user_like==false){
+                    $(selector).css("color","black");}
+              document.getElementById('likes_count').innerHTML="Likes: " + response.likes_count;
+          }
+
+        });
+
+  })
+</script>
+    
+
