@@ -39,7 +39,7 @@
   <body>
     <header>
       <div class="logo">
-        <img src="images/Model-images/brand&logo.svg" alt="scalables-logo" />
+        <img src="{% static 'images/Model-images/brand&logo.svg' %}" alt="scalables-logo" />
       </div>
 
       <div class="navbar">
@@ -65,7 +65,7 @@
       <div class="topnav">
         <a href="{% url 'home' %}"
           ><img
-            src="images/Model-images/brand&logo.svg"
+            src="{% static 'images/Model-images/brand&logo.svg' %}"
             alt="logo"
             class="logo"
         /></a>
@@ -93,7 +93,7 @@
     </nav>
     <section class="faq-sec">
       <div class="img-sec">
-        <img class="stuff" src="/images/stuff1.png" alt="Image of purse" />
+        <img class="stuff" src="{% static 'images/stuff1.png' %}" alt="Image of purse" />
         <h1 class="Title">FAQ / How to Use</h1>
       </div>
 
@@ -120,7 +120,7 @@
         <div class="qna">
           <h2>Q: Is there a search button for products?</h2>
           <h3 class="ans">
-            A: Yes there is a search engine to anable users search through
+            A: Yes there is a search engine to enable users search through
             categories of product availables
           </h3>
         </div>
@@ -154,7 +154,10 @@
         <h2 class="home-title">Was this Helpful?</h2>
         <button class="y-btn">Yes</button>
         <button class="oth-btn mbtn">No</button>
-        <button class="oth-btn rbtn">Back to Home</button>
+      
+        <a href="/{{ home }}"><button class="oth-btn rbtn">Back to Home</button></a>
+        <!-- <button class="oth-btn rbtn">Back to Home</button> -->
+        
       </div>
     </section>
     <section class="footer">
@@ -168,8 +171,8 @@
         </div>
         <div class="stores">
           <h3 class="bold-title store-text">Stores in Scalables</h3>
-          <img class="ebay" src="/images/ebay.png" alt="ebay Picture" />
-          <img class="amazon" src="/images/amazon.png" alt="Amazon Picture" />
+          <img class="ebay" src="{% static 'images/ebay.png' %}" alt="ebay Picture" />
+          <img class="amazon" src="{% static 'images/amazon.png' %}" alt="Amazon Picture" />
         </div>
         <div class="follow">
           <h3 class="bold-title">Follow Us</h3>

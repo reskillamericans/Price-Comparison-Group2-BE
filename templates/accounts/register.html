@@ -16,7 +16,7 @@
     <div class="web-view">
     <header>
         <div class="logo">
-            <img src="images/signup-images/brand&logo.png" alt="scalables-logo">
+            <img src="{% static 'images/signup-images/brand&logo.png' %}" alt="scalables-logo">
         </div>
         
         <div class="navbar">
@@ -26,19 +26,22 @@
                 <li><a href="{% url 'faq' %}" class="faq">FAQ</a></li>
                 <li><a href="#" class="blog">Blog</a></li>
                 <li><a href="Contact.html" class="contact">Contact Us</a></li>
+                <li><a href="{% url 'accounts:register' %}" class="register">Register</a></li>
+                <li><a href="{% url 'accounts:login' %}" class="login">Login</a></li>
+            </ul>
             </ul>
         </div>
-        <div class="register-login">
+        <!-- <div class="register-login">
             <ul>
                 <li><a href="{% url 'accounts:register' %}" class="register">Register</a></li>
                 <li><a href="{% url 'accounts:login' %}" class="login">Login</a></li>
             </ul>
-        </div>
+        </div> -->
     </header>
 
 <div class="main">
     <div class="bigimage">
-        <img src="images/signup-images/person.png" alt="person-sitting-shopping-on-mobile">
+        <img src="{% static 'images/signup-images/person.png' %}" alt="person-sitting-shopping-on-mobile">
     </div>
 
     <div class="form-container">
@@ -67,7 +70,7 @@
 
 <div class="mobile-view">
 <div class="makeup">
-    <img src="images/signup-images/makeup.png" alt="scattered makeup items">
+    <img src="{% static 'images/signup-images/makeup.png' %}" alt="scattered makeup items">
 </div>
 
 <div class="container">

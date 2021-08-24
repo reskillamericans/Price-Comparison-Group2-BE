@@ -1,6 +1,6 @@
 {% load staticfiles %}
 
-<link rel=”stylesheet” href=”{% static ‘css/styles.css’ %}”>
+<link rel=”stylesheet” href=”{% static 'css/style.css' %}”>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +32,7 @@
     <!--Justin's files will be providing the image and css code for the header and logo.-->
     <header>
         <div class="logo">
-            <img src="images/Model-images/brand&logo.svg" alt="logo">
+            <img src="{% static 'images/Model-images/brand&logo.svg' %}" alt="logo">
         </div>
         <div class="navbar">
             <div class="home"><a href="index.html">Home</a></div>

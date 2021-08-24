@@ -2,9 +2,26 @@ import requests
 from django.shortcuts import render
 from django.http import JsonResponse
 from .models import Product
+from blog.models import Like
 
-def home(request):
-    return render(request, "products/index.html")
+
+def home(requests):
+    #product = Product.objects.all()
+    product= Product.objects.all()
+    context={
+          'products' : product
+        
+      }
+    return render(requests, "products/index.html", context)
+
+    
+
+    #Search item
+    product_name = requests.GET.get('product_name')
+    if product_name !='' and product_name is not None:
+        product = product.filter(name__icontains=product_name)
+    return render(requests, "products/index.html")
+
 
 def amazon(request):
     url = "https://amazon-products1.p.rapidapi.com/product"
@@ -34,9 +51,41 @@ def ebay(request):
     return JsonResponse(response.json(), safe=False)
 
 
-
 def product_detail(requests, id):
-    product = Products.objects.get(id=id)
+    product = Product.objects.get(id=id)
+    user=requests.user
+    likes_list =Like.objects.filter(product_id=id)
+    if user.is_authenticated:
+        user_like=Like.objects.filter( user=requests.user, product_id=id)
+    else:
+        user_like=False
+
+    context={
+        'product':product,
+        'user':user,
+        'likes_list': likes_list,
+        'user_like': user_like
+    }
+    return render(requests, 'products/Product.html', context)
+
+
+
+def product_comparison(requests, id):
+    product = Product.objects.get(id=id)
+    user=requests.user
+    likes_list =Like.objects.filter(product_id=id)
+    if user.is_authenticated:
+        user_like=Like.objects.filter( user=requests.user, product_id=id)
+    else:
+        user_like=False
+
+    context={
+        'product':product,
+        'user':user,
+        'likes_list': likes_list,
+        'user_like': user_like
+    }
     # print(product)
-    context = { 'product' : product}
-    return render(request, 'the+page.html', context)
+    return render(requests, 'products/Item.html', context)
+
+
